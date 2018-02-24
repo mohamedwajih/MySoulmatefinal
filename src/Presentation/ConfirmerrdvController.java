@@ -24,6 +24,7 @@ import javafx.stage.Stage;
 import Services.SPlace;
 import Services.SRdv;
 import Util.amiaffichage;
+import Util.sendsms;
 
 /**
  * FXML Controller class
@@ -83,6 +84,12 @@ public class ConfirmerrdvController implements Initializable {
                  r.setDate2(s);
                  System.out.println("confirmé  "+r);
                  sr.confirmerrdv(r);
+                  Fos_user fu=new Fos_user();
+            amiaffichage af=new amiaffichage();
+            fu=af.getphotouserbyid(NewFXMain.idu2);
+           String msg=fu.getPrenom()+" a accepté votre demande de rendez-vous, Consultez votre compte Mysoulmate pour plus d'information.";
+           sendsms sm=new sendsms();
+           //sm.send(fu.getNum_tel(),msg);
             Alert alert = new Alert(Alert.AlertType.INFORMATION); 
             alert.setTitle("Notice");
             alert.setHeaderText(null); 

@@ -23,13 +23,13 @@ public class sendsms {
     public sendsms() {
     }
     
-    public void send(int num,String txt){
+    public void send(long num,String txt){
         try {
    // Construct data
    String apiKey = "apikey=u6V3YvnIvBA-n661oTWLmY2hxxExbrM2Ury3AcNwfu";
    String message = "&message="+txt;
    String sender = "&sender=My Soulmate";
-   String numbers = "&numbers="+String.valueOf(num);
+   String numbers = "&numbers=00216"+String.valueOf(num);
     
    // Send data
    HttpURLConnection conn = (HttpURLConnection) new URL("https://api.txtlocal.com/send/?").openConnection();

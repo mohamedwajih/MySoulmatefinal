@@ -19,6 +19,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import Services.SAmi;
 import Util.amiaffichage;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -47,9 +48,13 @@ public class ConsulterlikeController implements Initializable {
     amiaffichage af= new amiaffichage();
     SAmi sa=new SAmi();
            int compteur=0; 
+    @FXML
+    private Label numtel;
+    @FXML
+    private Label pourcent;
            
     public void ref(){
-            comp.setText("Vous avez"+String.valueOf(listec.size()-compteur)+" Likes encore ...");
+            comp.setText(String.valueOf(compteur+1)+"/"+String.valueOf(listec.size()));
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -61,11 +66,16 @@ public class ConsulterlikeController implements Initializable {
         System.out.println("size="+listec.size());
         Image image=new Image(listec.get(0).getPhoto_de_profil());
         pdp.setImage(image);
-        username.setText(listec.get(0).getUsername());
-        age.setText(String.valueOf(listec.get(0).getAge()));
+         System.out.println(listec.get(0));
+        username.setText(listec.get(0).getPrenom());
+        age.setText(String.valueOf(listec.get(0).getAge())+" Ans");
         adresse.setText(listec.get(0).getAdresse());
+        numtel.setText(String.valueOf(listec.get(0).getNum_tel()));
+        pourcent.setText(String.valueOf(af.getpourcent(NewFXMain.idu1, listec.get(0).getId()))+" %");
      } else {
          System.out.println("wfew");
+         Stage s=(Stage) age.getScene().getWindow();
+            s.close();
      }
     }    
 
@@ -82,16 +92,20 @@ public class ConsulterlikeController implements Initializable {
         if(listec.size()!=compteur){
         Image image=new Image(listec.get(compteur).getPhoto_de_profil());
         pdp.setImage(image);
-        username.setText(listec.get(compteur).getUsername());
-        age.setText(String.valueOf(listec.get(compteur).getAge()));
+        username.setText(listec.get(compteur).getPrenom());
+        age.setText(String.valueOf(listec.get(compteur).getAge())+" Ans");
         adresse.setText(listec.get(compteur).getAdresse()); 
-        
+       numtel.setText(String.valueOf(listec.get(compteur).getNum_tel()));
+        pourcent.setText(String.valueOf(af.getpourcent(NewFXMain.idu1, listec.get(compteur).getId()))+" %");
+
     } else {
              Alert alert = new Alert(Alert.AlertType.INFORMATION); 
             alert.setTitle("Notice");
             alert.setHeaderText(null); 
             alert.setContentText("Vous n'avez pas des autres LIKES");
             alert.showAndWait();
+            Stage s=(Stage) age.getScene().getWindow();
+            s.close();
         } 
     }
 
@@ -106,15 +120,20 @@ public class ConsulterlikeController implements Initializable {
         if(listec.size()!=compteur){
         Image image=new Image(listec.get(compteur).getPhoto_de_profil());
         pdp.setImage(image);
-        username.setText(listec.get(compteur).getUsername());
-        age.setText(String.valueOf(listec.get(compteur).getAge()));
-        adresse.setText(listec.get(compteur).getAdresse());  
+        username.setText(listec.get(compteur).getPrenom());
+        age.setText(String.valueOf(listec.get(compteur).getAge())+" Ans");
+        adresse.setText(listec.get(compteur).getAdresse());
+        numtel.setText(String.valueOf(listec.get(compteur).getNum_tel()));
+        pourcent.setText(String.valueOf(af.getpourcent(NewFXMain.idu1, listec.get(compteur).getId()))+" %");
+
     } else {
              Alert alert = new Alert(Alert.AlertType.INFORMATION); 
             alert.setTitle("Notice");
             alert.setHeaderText(null); 
             alert.setContentText("Vous n'avez pas des autres LIKES");
             alert.showAndWait();
+            Stage s=(Stage) age.getScene().getWindow();
+            s.close();
         } 
         
     }

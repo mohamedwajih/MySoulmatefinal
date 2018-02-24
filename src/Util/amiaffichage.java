@@ -84,6 +84,9 @@ public class amiaffichage {
                   a.setId(res1.getInt("id"));
                   a.setPhoto_de_profil(res1.getString("photo_de_profil"));
                   a.setAge(res1.getInt("age"));
+                  a.setAdresse(res1.getString("adresse"));
+                  a.setPrenom(res1.getString("prenom"));
+                  a.setNum_tel(res1.getInt("num_tel"));
                   
                  l1.add(a);
              }
@@ -109,11 +112,28 @@ public class amiaffichage {
              fs.setAge(res.getInt("age"));
              fs.setAdresse(res.getString("adresse"));
              fs.setPrenom(res.getString("prenom"));
+             fs.setNum_tel(res.getInt("num_tel"));
          
          } catch (SQLException ex) {
              Logger.getLogger(amiaffichage.class.getName()).log(Level.SEVERE, null, ex);
          }
            return fs;     
+     }
+     
+     ////////////////////////////////////////////////////////////////////////
+     
+     public int getpourcent(int id1,int id2){
+         String query="SELECT pourcentage FROM matching WHERE idUser1="+id1+" AND idUser2="+id2;
+         int p = 0;
+         try {
+             Statement st=cnx.createStatement();
+             ResultSet rs=st.executeQuery(query);
+             rs.first();
+             p=rs.getInt("pourcentage");
+         } catch (SQLException ex) {
+             Logger.getLogger(amiaffichage.class.getName()).log(Level.SEVERE, null, ex);
+         }
+         return p;
      }
     
 }

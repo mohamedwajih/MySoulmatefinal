@@ -34,6 +34,7 @@ import javafx.util.Callback;
 import Services.SPlace;
 import Services.SRdv;
 import Util.amiaffichage;
+import Util.sendsms;
 
 /**
  * FXML Controller class
@@ -164,11 +165,17 @@ public class RDVController implements Initializable {
         r.setDate(String.valueOf(daterdv.getValue()),Integer.parseInt(heure.getValue()),Integer.parseInt(minute.getValue()));
             System.out.println( sr.rechercher(r.getId1(), r.getId2(), r.getDate()));
         if(sr.rechercher(r.getId1(), r.getId2(), r.getDate())==false){
+            Fos_user fu=new Fos_user();
+            amiaffichage af=new amiaffichage();
+            fu=af.getphotouserbyid(NewFXMain.idu2);
            sr.ajouter(r);
+           String msg="Quelqu'un vous a proposé un rendez-LOVE , Consultez votre Compte MySoulmate pour le confirmer.";
+           sendsms sm=new sendsms();
+          // sm.send(fu.getNum_tel(), msg);
            Alert alert = new Alert(Alert.AlertType.INFORMATION);
            alert.setTitle("succes");
            alert.setHeaderText(null);
-           alert.setContentText("Rendez-vous en cours de validation");
+           alert.setContentText(fu.getPrenom()+" Va recevoir un SMS pour confirmer votre rendez-vous");
            alert.showAndWait();
            Stage stage= (Stage) place.getScene().getWindow();
            stage.close();

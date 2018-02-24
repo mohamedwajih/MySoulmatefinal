@@ -29,6 +29,8 @@ import javafx.scene.layout.Background;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import Services.SPlace;
+import Util.PostFile;
+import Util.amiaffichage;
 
 /**
  * FXML Controller class
@@ -51,8 +53,6 @@ public class AjouterplaceController implements Initializable {
     @FXML
     private ComboBox<String> type;
     @FXML
-    private ProgressBar progress = new ProgressBar();;
-    @FXML
     private Button ajoutbtn;
 
     /**
@@ -70,9 +70,9 @@ public class AjouterplaceController implements Initializable {
            
       
     }    
-
+String path;
     @FXML
-    private void choose(ActionEvent event) {
+    private void choose(ActionEvent event) throws Exception {
         Stage s = new Stage();
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Resource File");
@@ -84,11 +84,15 @@ public class AjouterplaceController implements Initializable {
         Image image = new Image("file:/C:/wamp64/www/Img/notok.png");
         icon.setImage(image);
         file.setText("file:\\" + fil.toString());
- 
+        System.out.println(fil.getAbsoluteFile());
+        //PostFile.upload(fil.getAbsolutePath());
+        path=fil.getAbsolutePath();
 
     }
+    
+    
     @FXML
-    private void ajouterplace(ActionEvent event) throws IOException {
+    private void ajouterplace(ActionEvent event) throws IOException, Exception {
         if (p_libelle.getText().compareTo("")==0 ||p_adresse.getText().compareTo("")==0 || file.getText().compareTo("")==0 || type.getValue().toString().compareTo("")==0){
             Alert alert = new Alert(AlertType.ERROR);
 alert.setTitle("Error ADD");
@@ -98,8 +102,8 @@ alert.setContentText("Ooops, il faut remplir tous les champs");
 alert.showAndWait();
         } else {
             
-        
-        Place p=new Place(p_libelle.getText(), p_adresse.getText(), file.getText(),type.getValue());
+
+        Place p=new Place(p_libelle.getText(), p_adresse.getText(),"file:/C:/wamp64/www/place_images/"+PostFile.upload(path),type.getValue());
         SPlace sp=new SPlace();
         sp.ajouter(p);
         p_libelle.setText("");
@@ -112,67 +116,13 @@ alert.showAndWait();
          alert.setTitle("Succes");
            alert.setHeaderText(null);
          alert.setContentText("New Place Addes");
+         
          alert.showAndWait();
          Stage stage=(Stage) p_libelle.getScene().getWindow();
          stage.close();
         }
        
     }
-private void progressbar(){
-     double x=0;
-        if (p_libelle.getText().compareTo("")!=0){
-            x+=0.25;
-            progress.setProgress(x);
-        } else {
-            x-=0.25;
-            progress.setProgress(x);
-        }
-        
-         if (p_adresse.getText().compareTo("")!=0){
-            x+=0.25;
-            progress.setProgress(x);
-        } else {
-            x-=0.25;
-            progress.setProgress(x);
-        }
-                
-         if (file.getText().compareTo("")!=0){
-            x+=0.25;
-            progress.setProgress(x);
-        } else {
-            x-=0.25;
-            progress.setProgress(x);
-        }
-         
-          if (type.getValue().compareTo("")!=0){
-            x+=0.25;
-            progress.setProgress(x);
-        } else {
-            x-=0.25;
-            progress.setProgress(x);
-        }
-        
-}
-    @FXML
-    private void prog1(MouseEvent event) {
-       progressbar();
-    }
-
-    @FXML
-    private void prog2(MouseEvent event) {
-        progressbar();
-    }
-
-    @FXML
-    private void prog3(MouseEvent event) {
-        progressbar();
-    }
-
-    @FXML
-    private void prog4(MouseEvent event) {
-        progressbar();
-    }
-
    
 
    
