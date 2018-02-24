@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="694.0" prefWidth="687.0" style="-fx-background-color: #FFCCCC; -fx-border-color: #99000D; -fx-border-width: 3;" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.MesMatchsController">
+   <children>
+      <Label fx:id="labelmatch" layoutX="104.0" layoutY="-26.0" prefHeight="139.0" prefWidth="271.0" text="Mes Matchs" textFill="#ff6969" wrapText="true">
+         <font>
+            <Font name="Jellyka - Love and Passion" size="52.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <Label fx:id="nbmatchs" layoutX="81.0" layoutY="75.0" prefHeight="91.0" prefWidth="400.0" text="NB matchs" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="LemonMilk" size="18.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="imagecoeur2" fitHeight="247.0" fitWidth="200.0" layoutX="481.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/asus/Documents/NetBeansProjects/MySoulmateMatching/src/Presentation/coeur.png" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
+      <Label fx:id="labelselection" layoutX="42.0" layoutY="590.0" prefHeight="75.0" prefWidth="639.0" text="Sélectionnez une question pour plus de détails" visible="false">
+         <font>
+            <Font name="LemonMilk" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="nom" layoutX="35.0" layoutY="419.0" prefHeight="41.0" prefWidth="292.0" text="Nom" textFill="#99000d">
+         <font>
+            <Font name="LemonMilk" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="prenom" layoutX="35.0" layoutY="460.0" prefHeight="41.0" prefWidth="292.0" text="Prenom" textFill="#99000d">
+         <font>
+            <Font name="LemonMilk" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="age" layoutX="375.0" layoutY="419.0" prefHeight="41.0" prefWidth="292.0" text="Age" textFill="#99000d">
+         <font>
+            <Font name="LemonMilk" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="adresse" layoutX="372.0" layoutY="460.0" prefHeight="41.0" prefWidth="298.0" text="Adresse" textFill="#99000d">
+         <font>
+            <Font name="LemonMilk" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="pourcent" layoutX="536.0" layoutY="65.0" prefHeight="75.0" prefWidth="103.0" text="100 %" textFill="WHITE">
+         <font>
+            <Font name="LemonMilk" size="38.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="photo" fitHeight="253.0" fitWidth="329.0" layoutX="172.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true">
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
+      <ImageView fitHeight="91.0" fitWidth="96.0" layoutX="50.0" layoutY="249.0" onMouseClicked="#Previous" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/asus/Documents/NetBeansProjects/MySoulmateMatching/src/Presentation/gauche.png" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
+      <ImageView fitHeight="91.0" fitWidth="96.0" layoutX="514.0" layoutY="249.0" onMouseClicked="#Next" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/asus/Documents/NetBeansProjects/MySoulmateMatching/src/Presentation/droite.png" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
+      <ImageView fx:id="like" fitHeight="163.0" fitWidth="200.0" layoutX="259.0" layoutY="509.0" onMouseClicked="#liker" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/asus/Documents/NetBeansProjects/Mysoulmatewajih/Ress/poucegris.png" />
+         </image>
+      </ImageView>
+   </children>
+   <effect>
+      <InnerShadow />
+   </effect>
+</AnchorPane>

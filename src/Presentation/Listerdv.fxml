@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="496.0" prefWidth="665.0" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.ListerdvController">
+   <children>
+      <Label layoutX="14.0" layoutY="-16.0" styleClass="title" text="Votre liste des rendez-vous">
+         <font>
+            <Font name="Constantia" size="26.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="pdp" fitHeight="177.0" fitWidth="200.0" layoutX="29.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true">
+         <effect>
+            <InnerShadow choke="0.21" height="35.83" radius="21.862499999999997" width="53.62" />
+         </effect></ImageView>
+      <ImageView fx:id="lieu" fitHeight="129.0" fitWidth="234.0" layoutX="265.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="nom" layoutX="93.0" layoutY="274.0" prefHeight="35.0" prefWidth="126.0" styleClass="simplelabel" text="nom" />
+      <Label fx:id="age" layoutX="129.0" layoutY="314.0" prefHeight="41.0" prefWidth="98.0" styleClass="simplelabel" text="age" />
+      <Button layoutX="525.0" layoutY="438.0" mnemonicParsing="false" onAction="#next" prefHeight="44.0" prefWidth="126.0" text="Suivant" />
+      <Button layoutX="14.0" layoutY="438.0" mnemonicParsing="false" onAction="#previous" prefHeight="44.0" prefWidth="126.0" text="Precedent" />
+      <ImageView fitHeight="29.0" fitWidth="170.0" layoutX="507.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/wamp64/www/Img/soulmate.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="date" layoutX="316.0" layoutY="333.0" prefHeight="44.0" prefWidth="285.0" styleClass="simplelabel" text="Label" />
+      <Label fx:id="place" layoutX="265.0" layoutY="246.0" prefHeight="55.0" prefWidth="285.0" styleClass="simplelabel" text="Label" />
+      <Label layoutX="21.0" layoutY="274.0" text="Nom:" textFill="#d01414">
+         <font>
+            <Font name="System Italic" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="63.0" layoutY="317.0" text="Age:" textFill="#d01414">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="41.0" fitWidth="48.0" layoutX="269.0" layoutY="327.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/wamp64/www/Img/clock.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="159.0" fitWidth="191.0" layoutX="262.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="55.0" fitWidth="41.0" layoutX="461.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/wamp64/www/Img/google-pushpin-md.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="617.0" prefWidth="1108.0" style="-fx-background-color: #9c2827;" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.ProfilController">
+   <children>
+      <AnchorPane layoutX="10.0" layoutY="7.0" prefHeight="62.0" prefWidth="1041.0" style="-fx-background-color: black; -fx-border-color: #ffffff; -fx-border-width: 2;">
+         <children>
+            <TextField fx:id="buttonRecherche" layoutX="17.0" layoutY="13.0" prefHeight="31.0" prefWidth="223.0" promptText="Rechercher ...." style="-fx-background-color: #fff;">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <ImageView fitHeight="46.0" fitWidth="58.0" layoutX="669.0" layoutY="13.0" onMouseClicked="#listermsg" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="file:/C:/wamp64/www/jweb.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="59.0" fitWidth="58.0" layoutX="757.0" layoutY="2.0" onMouseClicked="#match" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="file:/C:/wamp64/www/rdv.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="44.0" fitWidth="58.0" layoutX="588.0" layoutY="12.0" onMouseClicked="#listerrdv" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="file:/C:/wamp64/www/Img/calendrier.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="46.0" fitWidth="58.0" layoutX="514.0" layoutY="8.0" onMouseClicked="#listerlike" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="file:/C:/wamp64/www/Img/listamis.png" />
+               </image>
+               <effect>
+                  <InnerShadow choke="1.0" color="WHITE" radius="68.5" width="255.0" />
+               </effect>
+            </ImageView>
+            <ImageView fx:id="newlike" fitHeight="21.0" fitWidth="49.0" layoutX="504.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="file:/C:/wamp64/www/Img/new.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="newmsg" fitHeight="21.0" fitWidth="49.0" layoutX="657.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="file:/C:/wamp64/www/Img/new.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="newrdv" fitHeight="21.0" fitWidth="49.0" layoutX="569.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="file:/C:/wamp64/www/Img/new.png" />
+               </image>
+            </ImageView>
+         </children>
+         <effect>
+            <InnerShadow choke="0.15" color="#483a94" height="57.85" radius="30.270000000000003" width="65.23" />
+         </effect>
+      </AnchorPane>
+      <ImageView fitHeight="182.0" fitWidth="177.0" layoutX="21.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/wamp64/www/Img/user_logo.png" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="buttonPhoto" layoutX="14.0" layoutY="115.0" prefHeight="200.0" prefWidth="191.0" style="-fx-border-color: #ffffff;" />
+      <AnchorPane layoutX="236.0" layoutY="120.0" prefHeight="181.0" prefWidth="552.0" style="-fx-border-color: #ffffff;" stylesheets="@stylesheet.css">
+         <children>
+            <TextArea layoutX="21.0" layoutY="14.0" prefHeight="90.0" prefWidth="515.0" promptText="Exprimez-vous ..." />
+         </children>
+      </AnchorPane>
+      <Label fx:id="txtPrenomNom" layoutX="259.0" layoutY="91.0" prefHeight="21.0" prefWidth="237.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <ListView fx:id="listeamis" layoutX="818.0" layoutY="88.0" onMouseClicked="#envoyermsg" prefHeight="504.0" prefWidth="274.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="565.0" prefWidth="751.0" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.RDVController">
+   <children>
+      <ImageView fx:id="pdp" fitHeight="270.0" fitWidth="266.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/asus/Documents/NetBeansProjects/Mysoulmatewajih/Ress/notok.png" />
+         </image>
+         <effect>
+            <InnerShadow choke="0.14" height="59.54" radius="28.53" width="56.58" />
+         </effect>
+      </ImageView>
+      <Label fx:id="nomami" layoutX="284.0" layoutY="61.0" prefHeight="85.0" prefWidth="210.0" text="Nom">
+         <font>
+            <Font name="Jellyka - Love and Passion" size="31.0" />
+         </font>
+      </Label>
+      <Label fx:id="ageami" layoutX="344.0" layoutY="135.0" prefHeight="50.0" prefWidth="104.0" text="age">
+         <font>
+            <Font name="Batang" size="29.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="daterdv" layoutX="77.0" layoutY="292.0" />
+      <ImageView fx:id="photoplace" fitHeight="259.0" fitWidth="349.0" layoutX="257.0" layoutY="294.0" nodeOrientation="RIGHT_TO_LEFT" onMouseEntered="#showim" pickOnBounds="true" preserveRatio="true">
+         <effect>
+            <InnerShadow choke="0.22" height="97.84" radius="44.035" width="80.3" />
+         </effect></ImageView>
+      <Label layoutX="26.0" layoutY="288.0" styleClass="simplelabel" text="Date">
+         <font>
+            <Font name="Batang" size="21.0" />
+         </font></Label>
+      <Label layoutX="30.0" layoutY="416.0" styleClass="simplelabel" text="Lieu">
+         <font>
+            <Font name="Batang" size="23.0" />
+         </font></Label>
+      <ImageView fx:id="plus" fitHeight="99.0" fitWidth="130.0" layoutX="637.0" layoutY="447.0" onMouseClicked="#addrdv" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/wamp64/www/Img/add-159647_960_720.png" />
+         </image>
+      </ImageView>
+      <ComboBox fx:id="place" layoutX="77.0" layoutY="422.0" prefHeight="25.0" prefWidth="174.0" promptText="Choisissez le lieu" />
+      <Label fx:id="pays" layoutX="392.0" layoutY="192.0" prefHeight="35.0" prefWidth="174.0" styleClass="simplelabel" text="Pays">
+         <font>
+            <Font name="Arial" size="35.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="heure" layoutX="113.0" layoutY="346.0" prefHeight="25.0" prefWidth="25.0" />
+      <ChoiceBox fx:id="minute" layoutX="162.0" layoutY="346.0" prefHeight="25.0" prefWidth="32.0" />
+      <Label layoutX="156.0" layoutY="350.0" text=":" />
+      <ImageView fitHeight="34.0" fitWidth="32.0" layoutX="70.0" layoutY="343.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/wamp64/www/Img/clock.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="userlogo" fitHeight="73.0" fitWidth="86.0" layoutX="358.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/wamp64/www/Img/user_logo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="32.0" fitWidth="38.0" layoutX="359.0" layoutY="198.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/wamp64/www/Img/terre.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

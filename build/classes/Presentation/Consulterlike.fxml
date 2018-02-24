@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.ConsulterlikeController">
+   <children>
+      <ImageView fx:id="pdp" fitHeight="191.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="username" layoutX="249.0" layoutY="46.0" prefHeight="31.0" prefWidth="78.0" styleClass="simplelabel" text="nom" />
+      <Label fx:id="age" layoutX="249.0" layoutY="89.0" styleClass="simplelabel" text="age" />
+      <Label fx:id="adresse" layoutX="297.0" layoutY="147.0" styleClass="simplelabel" text="adresse" />
+      <ImageView fitHeight="127.0" fitWidth="120.0" layoutX="162.0" layoutY="223.0" onMouseClicked="#like" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/wamp64/www/Img/poucerouge.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="126.0" fitWidth="120.0" layoutX="346.0" layoutY="225.0" onMouseClicked="#deslike" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+         <image>
+            <Image url="file:/C:/wamp64/www/Img/poucegris.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="comp" layoutX="448.0" layoutY="344.0" prefHeight="42.0" prefWidth="176.0" styleClass="smalllabel" text="Label" />
+      <Label layoutX="192.0" layoutY="46.0" text="Nom:" textFill="#d01414">
+         <font>
+            <Font name="System Italic" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="200.0" layoutY="89.0" text="Age:" textFill="#d01414">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
