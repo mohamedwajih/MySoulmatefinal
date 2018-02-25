@@ -35,9 +35,14 @@ public class SMatching implements IMatching {
     public void ajouter(Matching m) {
          String query="INSERT INTO matching VALUES "
                  + "('"+m.getIdUser1()+"','"+m.getIdUser2()+"','"+m.getPourcentage()+"')";
+         String query2="INSERT INTO matching VALUES "
+                 + "('"+m.getIdUser2()+"','"+m.getIdUser1()+"','"+m.getPourcentage()+"')";
          try {
              Statement st=cnx.createStatement();
              st.executeUpdate(query);
+             Statement st2=cnx.createStatement();
+             st2.executeUpdate(query2);
+             
              System.out.println("Matching ajouté!");
          } catch (SQLException ex) {
              Logger.getLogger(SMatching.class.getName()).log(Level.SEVERE, null, ex);
@@ -166,5 +171,25 @@ public List<Matching> match(int id)
     System.out.println("Nombre de matchs="+matchs.size());
 return matchs;
 }
+
+    @Override
+    public int nbpourcentage(int nb) {
+String query="SELECT COUNT(pourcentage) AS nombre FROM matching WHERE pourcentage="+nb;
+        
+        int res=0;
+        try {
+           
+             Statement st=cnx.createStatement();
+             ResultSet result=st.executeQuery(query);
+             result.first();
+             res=result.getInt("nombre");
+             
+            
+         } catch (SQLException ex) {
+             Logger.getLogger(SMatching.class.getName()).log(Level.SEVERE, null, ex);
+         }
+        System.out.println("res="+res);
+         return res;    
   
    }  
+}

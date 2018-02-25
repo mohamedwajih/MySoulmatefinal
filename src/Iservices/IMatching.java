@@ -13,8 +13,9 @@ import java.util.List;
  * @author Fatma
  */
 public interface IMatching {
-    public void ajouter(Matching m);
+     public void ajouter(Matching m);
     public List<Matching> listerAll();
     public List<Matching> listerOne(int id);
     public List<Matching> match(int id);
+   public int nbpourcentage(int nb);
 }

@@ -181,4 +181,45 @@ public List<Personnalite> listerDifferent(int id) {
         return false;
         
     }
+
+    @Override
+    public float moyenne(String trait) {
+String query = "SELECT  AVG("+trait+") AS moyenne FROM preference";
+      float res=0;
+
+    
+            
+        try {
+            Statement st = cnx.createStatement();
+            ResultSet result = st.executeQuery(query);
+        result.first();
+        res=result.getFloat("moyenne");
+            
+        }
+            
+         catch (SQLException ex) {
+            Logger.getLogger(SPersonnalite.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            return res;
+                        }
+     @Override
+    public int nbpourcentagetrait(String trait, int nb) {
+String query="SELECT COUNT("+trait+") AS nombre FROM personnalite WHERE "+trait+"="+nb;
+        
+        int res=0;
+        try {
+           
+             Statement st=cnx.createStatement();
+             ResultSet result=st.executeQuery(query);
+             result.first();
+             res=result.getInt("nombre");
+             
+            
+         } catch (SQLException ex) {
+             Logger.getLogger(SMatching.class.getName()).log(Level.SEVERE, null, ex);
+         }
+        System.out.println("res="+res);
+         return res;    
+  
+   }  
 }

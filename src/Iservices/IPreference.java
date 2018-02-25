@@ -21,4 +21,6 @@ public interface IPreference {
     public Preference listerOne(int id);
     public List<Preference> listerDifferent(int id);
      public boolean ajouterPourcentage (String trait, int nb, int idUser);
+     public float moyenne(String trait);
+     public int nbpourcentagetrait(String trait, int nb) ;
 }
