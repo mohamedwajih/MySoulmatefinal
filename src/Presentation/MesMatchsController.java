@@ -55,8 +55,6 @@ public class MesMatchsController implements Initializable {
     @FXML
     private Label adresse;
     @FXML
-    private ImageView imagecoeur2;
-    @FXML
     private Label pourcent;
     int id = 2;
     @FXML
@@ -64,16 +62,27 @@ public class MesMatchsController implements Initializable {
    
     SMatching sm = new SMatching();
     SUser su = new SUser();
-    @FXML
-    private Label nbmatchs;
-    @FXML
-    private Label labelselection;
+ 
     List<Matching> matchs = new ArrayList<>(sm.listerOne(id));
     int compteur=0;
     @FXML
     private ImageView like;
     Image poucegris = new Image("file:/C:/wamp64/www/Img/poucegris.png");
     Image poucerouge = new Image("file:/C:/wamp64/www/Img/poucerouge.png");
+    Image coeur = new Image("file:/C:/wamp64/www/Img/coeur.png");
+    Image imageparchemin = new Image("file:/C:/wamp64/www/Img/parchemin.gif");
+    Image droite = new Image("file:/C:/wamp64/www/Img/droite.png");
+    Image gauche = new Image("file:/C:/wamp64/www/Img/gauche.png");
+    @FXML
+    private Label labelselection;
+    @FXML
+    private ImageView parchemin;
+    @FXML
+    private ImageView imagecoeur;
+    @FXML
+    private ImageView flechegauche;
+    @FXML
+    private ImageView flechedroite;
 
     /**
      * Initializes the controller class.
@@ -96,38 +105,38 @@ public class MesMatchsController implements Initializable {
         adresse.setText(su.getUserById(matchs.get(0).getIdUser2()).getAdresse());
        Image i = new Image(su.getUserById(matchs.get(0).getIdUser2()).getPhoto_de_profil());
        photo.setImage(i);
-nbmatchs.setText(matchs.size()+" Matchs pour \n"+su.getUserById(id).getNom()+" "+su.getUserById(id).getPrenom());
 pourcent.setText(matchs.get(0).getPourcentage()+" %");
 verif();
+flechegauche.setVisible(false);
+flechedroite.setVisible(true);
+        System.out.println("compteur="+compteur);
     }
 
 @FXML
     private void Next(MouseEvent event) {
         System.out.println("Clicked!");
+      System.out.println("compteur next entree="+compteur);
+       
+        if(compteur<matchs.size()-1){compteur++;
+         nom.setText(su.getUserById(matchs.get(compteur).getIdUser2()).getNom());
+        prenom.setText(su.getUserById(matchs.get(compteur).getIdUser2()).getPrenom());
+        age.setText(su.getUserById(matchs.get(compteur).getIdUser2()).getAge() + " ans");
+        adresse.setText(su.getUserById(matchs.get(compteur).getIdUser2()).getAdresse());
+            
+        Image i = new Image(su.getUserById(matchs.get(compteur).getIdUser2()).getPhoto_de_profil());
+        photo.setImage(i);
+        pourcent.setText(matchs.get(compteur).getPourcentage()+" %");
+          flechedroite.setVisible(true);
+          flechegauche.setVisible(true);
+            System.out.println("boucle1 next");
+         if(compteur==matchs.size()-1)  {
+            flechedroite.setVisible(false);
+            System.out.println("boucle2 next");
+        }
+        }
+       
+        System.out.println("compteur next ="+compteur);
       
-        System.out.println("compteur="+compteur);
-        if(compteur<matchs.size()){compteur++;
-         nom.setText(su.getUserById(matchs.get(compteur).getIdUser2()).getNom());
-        prenom.setText(su.getUserById(matchs.get(compteur).getIdUser2()).getPrenom());
-        age.setText(su.getUserById(matchs.get(compteur).getIdUser2()).getAge() + " ans");
-        adresse.setText(su.getUserById(matchs.get(compteur).getIdUser2()).getAdresse());
-            
-        Image i = new Image(su.getUserById(matchs.get(compteur).getIdUser2()).getPhoto_de_profil());
-        photo.setImage(i);
-        pourcent.setText(matchs.get(compteur).getPourcentage()+" %");
-          
-        }
-        else if (compteur>matchs.size()) {compteur=0;
-         nom.setText(su.getUserById(matchs.get(compteur).getIdUser2()).getNom());
-        prenom.setText(su.getUserById(matchs.get(compteur).getIdUser2()).getPrenom());
-        age.setText(su.getUserById(matchs.get(compteur).getIdUser2()).getAge() + " ans");
-        adresse.setText(su.getUserById(matchs.get(compteur).getIdUser2()).getAdresse());
-            
-        Image i = new Image(su.getUserById(matchs.get(compteur).getIdUser2()).getPhoto_de_profil());
-        photo.setImage(i);
-        pourcent.setText(matchs.get(compteur).getPourcentage()+" %");
-        
-        }
         verif();
     }
 
@@ -136,8 +145,8 @@ verif();
     @FXML
     private void Previous(MouseEvent event) {
          System.out.println("Clicked!");
+       System.out.println("compteur prev="+compteur);
        
-        System.out.println("compteur="+compteur);
         if(compteur<matchs.size()){ compteur--;
          nom.setText(su.getUserById(matchs.get(compteur).getIdUser2()).getNom());
         prenom.setText(su.getUserById(matchs.get(compteur).getIdUser2()).getPrenom());
@@ -146,19 +155,12 @@ verif();
         Image i = new Image(su.getUserById(matchs.get(compteur).getIdUser2()).getPhoto_de_profil());
         photo.setImage(i);
         pourcent.setText(matchs.get(compteur).getPourcentage()+" %");
-      
+      flechedroite.setVisible(true);
+            System.out.println("boucle1 prev");
+             if(compteur==0)  {
+            flechegauche.setVisible(false);
+            System.out.println("boucle2 next");
         }
-         else if(compteur<1)
-        {
-            compteur=matchs.size();
-             nom.setText(su.getUserById(matchs.get(compteur).getIdUser2()).getNom());
-        prenom.setText(su.getUserById(matchs.get(compteur).getIdUser2()).getPrenom());
-        age.setText(su.getUserById(matchs.get(compteur).getIdUser2()).getAge() + " ans");
-        adresse.setText(su.getUserById(matchs.get(compteur).getIdUser2()).getAdresse());
-            
-        Image i = new Image(su.getUserById(matchs.get(compteur).getIdUser2()).getPhoto_de_profil());
-        photo.setImage(i);
-        pourcent.setText(matchs.get(compteur).getPourcentage()+" %");
         }
         verif();
     }
