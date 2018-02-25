@@ -2,19 +2,22 @@
 
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="429.0" prefWidth="600.0" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.HistoriquemsgController">
+<AnchorPane id="AnchorPane" prefHeight="479.0" prefWidth="708.0" styleClass="historique" stylesheets="file:/C:/wamp64/www/Img/stylesheet.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.HistoriquemsgController">
    <children>
-      <Label layoutX="102.0" layoutY="-13.0" styleClass="title" text="Historique des Messages">
+      <Label layoutX="75.0" layoutY="-7.0" text="Historique des Messages" textFill="WHITE">
          <font>
-            <Font name="Arial Black" size="25.0" />
+            <Font name="Jellyka - Love and Passion" size="42.0" />
          </font>
       </Label>
-      <ScrollPane layoutX="24.0" layoutY="95.0" prefHeight="312.0" prefWidth="558.0">
+      <ScrollPane layoutX="75.0" layoutY="110.0" prefHeight="312.0" prefWidth="558.0" style="-fx-background-color: pink;">
          <content>
             <GridPane fx:id="listmsg" prefHeight="152.0" prefWidth="556.0">
               <columnConstraints>
@@ -25,5 +28,18 @@
             </GridPane>
          </content>
       </ScrollPane>
+      <ImageView fitHeight="84.0" fitWidth="126.0" layoutX="610.0" layoutY="381.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/wamp64/www/Img/Plume_SM.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="35.0" fitWidth="188.0" layoutX="532.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/wamp64/www/Img/soulmate.png" />
+         </image>
+      </ImageView>
    </children>
+   <effect>
+      <InnerShadow />
+   </effect>
 </AnchorPane>

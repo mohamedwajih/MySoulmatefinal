@@ -3,11 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/asus/Documents/NetBeansProjects/MySoulmatefinal/src/Presentation/NewFXMain.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/MySoulmatefinal/src/Presentation/ListerdvController.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/MySoulmatefinal/src/Util/util.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/MySoulmatefinal/src/Presentation/RDVController.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/MySoulmatefinal/src/Presentation/Listerdv.fxml</file>
             <file>file:/C:/Users/asus/Documents/NetBeansProjects/MySoulmatefinal/src/Presentation/HistoriquemsgController.java</file>
-            <file>file:/C:/Users/asus/Documents/NetBeansProjects/MySoulmatefinal/src/Presentation/ConfirmerrdvController.java</file>
-            <file>file:/C:/Users/asus/Documents/NetBeansProjects/MySoulmatefinal/src/Presentation/MesMatchsController.java</file>
-            <file>file:/C:/Users/asus/Documents/NetBeansProjects/MySoulmatefinal/src/Presentation/AjouterplaceController.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/MySoulmatefinal/src/DataStorage/Mydb.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/MySoulmatefinal/src/Presentation/ProfilController.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/MySoulmatefinal/src/Presentation/NewFXMain.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/MySoulmatefinal/src/Services/SAmi.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/MySoulmatefinal/src/Util/amiaffichage.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/MySoulmatefinal/src/mysoulmatefinal/MySoulmatefinal.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/MySoulmatefinal/src/Iservices/IPersonnalite.java</file>
         </group>
     </open-files>
 </project-private>

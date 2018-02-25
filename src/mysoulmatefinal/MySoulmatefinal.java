@@ -5,6 +5,8 @@
  */
 package mysoulmatefinal;
 
+import Util.amiaffichage;
+
 /**
  *
  * @author asus
@@ -16,6 +18,8 @@ public class MySoulmatefinal {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        amiaffichage af=new amiaffichage();
+        System.out.println(af.getpref(2));
     }
     
 }
