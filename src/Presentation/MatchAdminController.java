@@ -17,6 +17,7 @@ import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Element;
 import com.itextpdf.text.FontFactory;
+import com.itextpdf.text.Image;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.Phrase;
 import com.itextpdf.text.pdf.PdfPCell;
@@ -50,10 +51,6 @@ import javafx.scene.control.Label;
  */
 public class MatchAdminController implements Initializable {
 
-   
-   
-   
-   
     SUser su= new SUser();
     SMatching sm= new SMatching(); 
     
@@ -237,7 +234,7 @@ public void statmoyennes(){
 public void statmatchs(){
         XYChart.Series series = new XYChart.Series<>();
                 
-                for(int i=50; i<=100;i++){
+                for(int i=50; i<=100;i+=5){
                     series.getData().add(new XYChart.Data(i+"",sm.nbpourcentage(i)));
                 }
                 series.setName("Nombre de matchs");
@@ -325,7 +322,7 @@ List<String> listepre = new ArrayList<>();
         PdfWriter.getInstance(doc, new FileOutputStream("Moyennes.pdf"));
  doc.open();
   doc.add(new Paragraph("   "));
-              
+               
                 doc.add(new Phrase("Moyennes sur les utilisateurs de MySoulmate"));
 
                 PdfPTable table = new PdfPTable(2);
