@@ -248,11 +248,7 @@ public void statmatchs(){
                 series.setName("Nombre de matchs");
                 LineChart.getData().addAll(series);
                 
-               
-    
-
-    
-    
+      
     }
     @FXML
     private void visualiser(ActionEvent event) {

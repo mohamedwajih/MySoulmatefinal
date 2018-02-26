@@ -24,7 +24,7 @@ import javafx.stage.Stage;
  */
 public class NewFXMain extends Application {
     
-    public static int idu1=1;
+    public static int idu1=2;
     public static int idu2;
     
    @Override
