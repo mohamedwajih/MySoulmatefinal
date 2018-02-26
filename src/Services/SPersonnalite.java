@@ -184,7 +184,7 @@ public List<Personnalite> listerDifferent(int id) {
 
     @Override
     public float moyenne(String trait) {
-String query = "SELECT  AVG("+trait+") AS moyenne FROM preference";
+String query = "SELECT  AVG("+trait+") AS moyenne FROM personnalite";
       float res=0;
 
     

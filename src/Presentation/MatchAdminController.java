@@ -5,48 +5,43 @@
  */
 package Presentation;
 
-import Entities.Fos_user;
-import Entities.Matching;
+import Entities.Personnalite;
+import Entities.Preference;
 import Services.SMatching;
 import Services.SPersonnalite;
 import Services.SPreference;
 import Services.SUser;
 import Util.util;
-import java.io.IOException;
+import com.itextpdf.text.BaseColor;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.FontFactory;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.Phrase;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Observable;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.PieChart;
 import javafx.scene.chart.XYChart;
-import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.Pane;
-import javafx.stage.Stage;
-import javafx.util.Callback;
 
 /**
  * FXML Controller class
@@ -277,6 +272,96 @@ public void statmatchs(){
     );
      PieChartPreference.setData(details2);
     } 
+
+    @FXML
+    private void pdf(ActionEvent event) throws DocumentException, FileNotFoundException {
+List<String> listeper = new ArrayList<>();
+List<String> listepre = new ArrayList<>();
+
+//PERSONNALITE MOYENNE
+        listeper.add(actifper.getText());
+        listeper.add(ambitieuxper.getText());
+       listeper.add(artisteper.getText());
+       listeper.add(attirantper.getText());
+        listeper.add(aventurierper.getText());
+        listeper.add(droleper.getText());
+        listeper.add(familleper.getText());
+        listeper.add(fideleper.getText());
+        listeper.add(genereuxper.getText());
+        listeper.add(jalouxper.getText());
+        listeper.add(materialisteper.getText());
+        listeper.add(musicienper.getText());
+        listeper.add(nerveuxper.getText());
+        listeper.add(romantiqueper.getText());
+        listeper.add(sensibleper.getText());
+        listeper.add(serieuxper.getText());
+        listeper.add(sociableper.getText());
+        listeper.add(soigneper.getText());
+        listeper.add(sporitfper.getText());
+        listeper.add(tolerantper.getText());
+       
+        //PREFERENCES MOYENNE
+        listepre.add(actifpre.getText());
+        listepre.add(ambitieuxpre.getText());
+        listepre.add(artistepre.getText());
+        listepre.add(attirantpre.getText());
+        listepre.add(aventurierpre.getText());
+        listepre.add(drolepre.getText());
+        listepre.add(famillepre.getText());
+        listepre.add(fidelepre.getText());
+        listepre.add(genereuxpre.getText());
+        listepre.add(jalouxpre.getText());
+        listepre.add(materialistepre.getText());
+        listepre.add(musicienpre.getText());
+        listepre.add(nerveuxpre.getText());
+        listepre.add(romantiquepre.getText());
+        listepre.add(sensiblepre.getText());
+        listepre.add(serieuxpre.getText());
+        listepre.add(sociablepre.getText());
+        listepre.add(soignepre.getText());
+        listepre.add(sporitfpre.getText());
+        listepre.add(tolerantpre.getText());
+        Document doc = new Document();
+        PdfWriter.getInstance(doc, new FileOutputStream("Moyennes.pdf"));
+ doc.open();
+  doc.add(new Paragraph("   "));
+              
+                doc.add(new Phrase("Moyennes sur les utilisateurs de MySoulmate"));
+
+                PdfPTable table = new PdfPTable(2);
+                table.setWidthPercentage(100);
+                PdfPCell cell;
+
+                cell = new PdfPCell(new Phrase("Personnalité", FontFactory.getFont("Comic Sans MS", 12)));
+                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                cell.setBackgroundColor(BaseColor.PINK);
+                table.addCell(cell);
+
+                cell = new PdfPCell(new Phrase("Préférences", FontFactory.getFont("Comic Sans MS", 12)));
+                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                cell.setBackgroundColor(BaseColor.CYAN);
+                table.addCell(cell);
+
+
+
+ for (int i=0; i<20;i++){
+
+                    cell = new PdfPCell(new Phrase(listeper.get(i), FontFactory.getFont("Comic Sans MS", 12)));
+
+                    cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                    cell.setBackgroundColor(BaseColor.PINK);
+                    table.addCell(cell);
+
+                    cell = new PdfPCell(new Phrase(listepre.get(i), FontFactory.getFont("Comic Sans MS", 12)));
+
+                    cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                    cell.setBackgroundColor(BaseColor.CYAN);
+                    table.addCell(cell);
+}
+
+ doc.add(table);
+                doc.close();
+    }
 
 }
     

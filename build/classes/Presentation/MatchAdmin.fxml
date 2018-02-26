@@ -155,6 +155,7 @@
       <PieChart fx:id="PieChartPreference" layoutX="1084.0" layoutY="453.0" prefHeight="216.0" prefWidth="220.0" />
       <Label layoutX="1161.0" layoutY="255.0" text="Personnalité" />
       <Label layoutX="1165.0" layoutY="444.0" text="Préférences" />
+      <Button layoutX="190.0" layoutY="663.0" mnemonicParsing="false" onAction="#pdf" text="Exporter PDF" />
    </children>
    <effect>
       <InnerShadow />
