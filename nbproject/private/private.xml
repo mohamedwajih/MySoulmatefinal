@@ -3,23 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/Presentation/ConsulterlikeController.java</file>
-            <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/Util/util.java</file>
-            <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/Presentation/NewFXMain.java</file>
-            <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/Presentation/MatchAdminController.java</file>
             <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/Iservices/IMatching.java</file>
-            <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/Services/SMatching.java</file>
             <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/Util/PostFile.java</file>
-            <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/Services/SPersonnalite.java</file>
+            <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/Presentation/NewFXMain.java</file>
             <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/Iservices/IPreference.java</file>
             <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/Presentation/TestPersonnaliteController.java</file>
-            <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/Services/SPreference.java</file>
+            <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/Presentation/MatchAdminController.java</file>
+            <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/Services/SMatching.java</file>
             <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/Presentation/ResultatsTestController.java</file>
-            <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/Presentation/TestPreferenceController.java</file>
-            <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/Entities/Matching.java</file>
-            <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/DataStorage/Mydb.java</file>
             <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/Presentation/MesMatchsController.java</file>
-            <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/Iservices/IPersonnalite.java</file>
+            <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/Entities/Matching.java</file>
+            <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/Util/util.java</file>
+            <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/Presentation/ConsulterlikeController.java</file>
+            <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/DataStorage/Mydb.java</file>
         </group>
     </open-files>
 </project-private>

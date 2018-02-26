@@ -276,7 +276,7 @@ public void statmatchs(){
             
     );
      PieChartPreference.setData(details2);
-    }
+    } 
 
 }
     
