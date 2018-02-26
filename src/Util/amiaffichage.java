@@ -8,6 +8,7 @@ package Util;
 import DataStorage.Mydb;
 import Entities.Fos_user;
 import Entities.Rdv;
+import Services.SRdv;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -174,6 +175,7 @@ public class amiaffichage {
              int day=rs.getInt("days");
              int mon=rs.getInt("month");
              res=day+(mon*30);
+             
              
          } catch (SQLException ex) {
              Logger.getLogger(amiaffichage.class.getName()).log(Level.SEVERE, null, ex);

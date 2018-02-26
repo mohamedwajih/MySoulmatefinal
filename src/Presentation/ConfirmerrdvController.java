@@ -68,6 +68,12 @@ public class ConfirmerrdvController implements Initializable {
         pdp.setImage(image);
         nomami.setText(fs.getPrenom());
         r=sr.listerOne(NewFXMain.idu2,NewFXMain.idu1);
+        if (af.daysleft(r)==0){
+                 SRdv sr=new SRdv();
+                 sr.supprimer(r);
+                 Stage sta=(Stage) pdp.getScene().getWindow();
+                 sta.close();
+             }
         daysleft1.setText(String.valueOf( af.daysleft(r)%10));
         daysleft2.setText(String.valueOf( af.daysleft(r)%100/10));
         daysleft3.setText(String.valueOf( af.daysleft(r)/100));
