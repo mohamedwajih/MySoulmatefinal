@@ -7,6 +7,8 @@ package Util;
 
 import DataStorage.Mydb;
 import Entities.Fos_user;
+import Entities.Rdv;
+import Services.SRdv;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -161,5 +163,23 @@ public class amiaffichage {
              Logger.getLogger(amiaffichage.class.getName()).log(Level.SEVERE, null, ex);
          }
          return res;
+     }
+     ////////////////////////////////////////////////////////
+     public int daysleft(Rdv r){
+         int res=0;
+         try {
+             String query="SELECT round(extract(day from date) - extract(day from sysdate())) AS days ,round(extract(month from date) - extract(month from sysdate())) AS month FROM rdv WHERE id_1="+r.getId1()+" AND id_2="+r.getId2()+" AND date='"+r.getDate()+"'";
+             Statement st=cnx.createStatement();
+             ResultSet rs= st.executeQuery(query);
+             rs.first();
+             int day=rs.getInt("days");
+             int mon=rs.getInt("month");
+             res=day+(mon*30);
+             
+             
+         } catch (SQLException ex) {
+             Logger.getLogger(amiaffichage.class.getName()).log(Level.SEVERE, null, ex);
+         }
+     return res;
      }
 }
