@@ -31,18 +31,31 @@ import javafx.stage.Stage;
 import Services.SPlace;
 import Util.PostFile;
 import Util.amiaffichage;
+import com.lynden.gmapsfx.GoogleMapView;
+import com.lynden.gmapsfx.MapComponentInitializedListener;
+import com.lynden.gmapsfx.javascript.object.GoogleMap;
+import com.lynden.gmapsfx.javascript.object.LatLong;
+import com.lynden.gmapsfx.javascript.object.MapOptions;
+import com.lynden.gmapsfx.javascript.object.MapTypeIdEnum;
+import com.lynden.gmapsfx.javascript.object.Marker;
+import com.lynden.gmapsfx.javascript.object.MarkerOptions;
+import com.lynden.gmapsfx.service.geocoding.GeocoderStatus;
+import com.lynden.gmapsfx.service.geocoding.GeocodingResult;
+import com.lynden.gmapsfx.service.geocoding.GeocodingService;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 /**
  * FXML Controller class
  *
  * @author asus
  */
-public class AjouterplaceController implements Initializable {
+public class AjouterplaceController implements Initializable ,MapComponentInitializedListener {
 
     @FXML
     private TextField p_libelle;
     @FXML
-    private TextField p_adresse;
+    private TextField addressTextField;
     
     @FXML
     private ImageView icon;
@@ -54,13 +67,21 @@ public class AjouterplaceController implements Initializable {
     private ComboBox<String> type;
     @FXML
     private Button ajoutbtn;
-
+    @FXML
+    private GoogleMapView mapView;
+    private GoogleMap map;
+    LatLong latLong;
+    private GeocodingService geocodingService;
+    private StringProperty address = new SimpleStringProperty();
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+                 mapView.addMapInializedListener(this);
+        address.bind(addressTextField.textProperty());
+
         Image image = new Image("file:/C:/wamp64/www/Img/ok.png");
         icon.setImage(image);
         type.getItems().addAll("Sport","Art","Musique","Nature","Culturel","Fête");
@@ -93,7 +114,7 @@ String path;
     
     @FXML
     private void ajouterplace(ActionEvent event) throws IOException, Exception {
-        if (p_libelle.getText().compareTo("")==0 ||p_adresse.getText().compareTo("")==0 || file.getText().compareTo("")==0 || type.getValue().toString().compareTo("")==0){
+        if (p_libelle.getText().compareTo("")==0 ||addressTextField.getText().compareTo("")==0 || file.getText().compareTo("")==0 || type.getValue().toString().compareTo("")==0){
             Alert alert = new Alert(AlertType.ERROR);
 alert.setTitle("Error ADD");
 alert.setHeaderText(null);
@@ -103,11 +124,11 @@ alert.showAndWait();
         } else {
             
 
-        Place p=new Place(p_libelle.getText(), p_adresse.getText(),"file:/C:/wamp64/www/place_images/"+PostFile.upload(path),type.getValue());
+        Place p=new Place(p_libelle.getText(), addressTextField.getText(),"file:/C:/wamp64/www/place_images/"+PostFile.upload(path),type.getValue());
         SPlace sp=new SPlace();
         sp.ajouter(p);
         p_libelle.setText("");
-        p_adresse.setText("");
+        addressTextField.setText("");
         file.setText("");
         type.setValue("");
          Image image = new Image("file:/C:/wamp64/www/Img/ok.png");
@@ -122,6 +143,71 @@ alert.showAndWait();
          stage.close();
         }
        
+    }
+
+            
+
+
+    @Override
+    public void mapInitialized() {
+          geocodingService = new GeocodingService();
+        MapOptions mapOptions = new MapOptions();
+        
+        mapOptions.center(new LatLong(36.899369, 10.189629))
+                .mapType(MapTypeIdEnum.ROADMAP)
+                .overviewMapControl(false)
+                .panControl(false)
+                .rotateControl(false)
+                .scaleControl(false)
+                .streetViewControl(false)
+                .zoom(12);
+
+        map = mapView.createMap(mapOptions);
+      
+    }
+
+   
+
+    @FXML
+    private void addressTextFieldAction(ActionEvent event) {
+         geocodingService.geocode(address.get(), (GeocodingResult[] results, GeocoderStatus status) -> {
+            
+            latLong = null;
+            
+            if( status == GeocoderStatus.ZERO_RESULTS) {
+                Alert alert = new Alert(Alert.AlertType.ERROR, "No matching address found");
+                alert.show();
+                return;
+            } else if( results.length > 1 ) {
+                Alert alert = new Alert(Alert.AlertType.WARNING, "Multiple results found, showing the first one.");
+                alert.show();
+                latLong = new LatLong(results[0].getGeometry().getLocation().getLatitude(), results[0].getGeometry().getLocation().getLongitude());
+            } else {
+                latLong = new LatLong(results[0].getGeometry().getLocation().getLatitude(), results[0].getGeometry().getLocation().getLongitude());
+            }
+            
+          
+            
+            map.setCenter(latLong);
+             MarkerOptions markerOptions = new MarkerOptions();
+             markerOptions.position( latLong )
+                .visible(Boolean.TRUE)
+                .title("My Marker");
+
+    Marker marker = new Marker( markerOptions );
+
+    map.addMarker(marker);
+    
+            
+            
+
+        });
+   
+    
+
+        
+        
+      
     }
    
 

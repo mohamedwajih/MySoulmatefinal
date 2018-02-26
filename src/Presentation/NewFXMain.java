@@ -24,14 +24,14 @@ import javafx.stage.Stage;
  */
 public class NewFXMain extends Application {
     
-    public static int idu1=1;
-    public static int idu2;
+    public static int idu1=2;
+    public static int idu2=1;
     
    @Override
    public void start (Stage stage) throws IOException
    {       
        
-       Parent  root = FXMLLoader.load(getClass().getResource("Profil.fxml"));
+       Parent  root = FXMLLoader.load(getClass().getResource("Confirmerrdv.fxml"));
        Scene scene = new Scene(root);
        stage.setScene(scene);
        stage.show();
