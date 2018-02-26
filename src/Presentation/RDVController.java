@@ -9,11 +9,8 @@ import Entities.Fos_user;
 import Entities.Place;
 import Entities.Rdv;
 import java.net.URL;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Observable;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -34,7 +31,12 @@ import javafx.util.Callback;
 import Services.SPlace;
 import Services.SRdv;
 import Util.amiaffichage;
+import Util.datapik;
 import Util.sendsms;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+import javafx.scene.control.DateCell;
+import javafx.scene.control.Tooltip;
 
 /**
  * FXML Controller class
@@ -86,6 +88,33 @@ public class RDVController implements Initializable {
         if(af.getpref(NewFXMain.idu2).compareTo("artiste")==0)
             the="Culturel";
         theme.setText(the);
+        
+        /////////////////////////////
+       /*  final Callback<DatePicker, DateCell> dayCellFactory = 
+        new Callback<DatePicker, DateCell>() {
+            @Override
+            public DateCell call(final DatePicker datePicker) {
+                return new DateCell() {
+                    @Override
+                    public void updateItem(LocalDate item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (item.isBefore(daterdv.getValue().plusDays(1))) {
+                                setDisable(true);
+                                setStyle("-fx-background-color: #ffc0cb;");
+                        }
+                        long p = ChronoUnit.DAYS.between(
+                                daterdv.getValue(), item
+                        );
+                        setTooltip(new Tooltip(
+                            "You're about to stay for " + p + " days")
+                        );
+                }
+            };
+        }
+    };
+    daterdv.setDayCellFactory(dayCellFactory);*/
+        Callback<DatePicker, DateCell> dayCellFactory= datapik.getDayCellFactory();
+        daterdv.setDayCellFactory(dayCellFactory);
         //////////////////////////COMBO BOX
         place.setCellFactory(new Callback<ListView<Place>,ListCell<Place>>(){
             @Override
