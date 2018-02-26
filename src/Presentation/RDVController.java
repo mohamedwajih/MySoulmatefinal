@@ -65,6 +65,10 @@ public class RDVController implements Initializable {
     private ImageView userlogo;
     @FXML
     private ImageView plus;
+    @FXML
+    private Label theme;
+    
+    amiaffichage af=new amiaffichage();
 
     /**
      * Initializes the controller class.
@@ -72,6 +76,16 @@ public class RDVController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        String the = null;
+        if(af.getpref(NewFXMain.idu2).compareTo("sportif")==0)
+            the="Sport";
+        if(af.getpref(NewFXMain.idu2).compareTo("sociable")==0)
+            the="Fête";
+        if(af.getpref(NewFXMain.idu2).compareTo("aventurier")==0)
+            the="Nature";
+        if(af.getpref(NewFXMain.idu2).compareTo("artiste")==0)
+            the="Culturel";
+        theme.setText(the);
         //////////////////////////COMBO BOX
         place.setCellFactory(new Callback<ListView<Place>,ListCell<Place>>(){
             @Override
@@ -135,7 +149,7 @@ public class RDVController implements Initializable {
         Image image = new Image(fs.getPhoto_de_profil());
         pdp.setImage(image);
         System.out.println(fs.getPhoto_de_profil());
-        nomami.setText(fs.getUsername());
+        nomami.setText(fs.getPrenom());
         ageami.setText(String.valueOf(fs.getAge())+" Ans");
         pays.setText(fs.getAdresse());
      /////////////////////END PROFIL

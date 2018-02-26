@@ -11,9 +11,9 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="381.0" prefWidth="600.0" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.AjouterplaceController">
+<AnchorPane id="AnchorPane" prefHeight="381.0" prefWidth="600.0" stylesheets="file:/C:/wamp64/www/Img/stylesheet.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.AjouterplaceController">
    <children>
-      <Pane layoutX="44.0" layoutY="80.0" prefHeight="288.0" prefWidth="533.0">
+      <Pane layoutX="44.0" layoutY="80.0" prefHeight="288.0" prefWidth="533.0" stylesheets="file:/C:/wamp64/www/Img/stylesheet.css">
          <children>
             <TextField fx:id="p_libelle" layoutX="173.0" layoutY="5.0" prefHeight="25.0" prefWidth="302.0" />
             <TextField fx:id="p_adresse" layoutX="188.0" layoutY="47.0" prefHeight="25.0" prefWidth="287.0" />
@@ -38,6 +38,6 @@
             <Image url="file:/C:/wamp64/www/Img/google-pushpin-md.png" />
          </image>
       </ImageView>
-      <Label layoutX="133.0" layoutY="-28.0" styleClass="title" text="Ajouter une nouvelle place" />
+      <Label layoutX="153.0" layoutY="-29.0" styleClass="title" text="Ajouter un nouveau lieu" />
    </children>
 </AnchorPane>

@@ -49,7 +49,7 @@ public class TestPreferenceController implements Initializable {
     private RadioButton reponse3;
     @FXML
     private Label nbquestion;
-int id=2;
+int id=NewFXMain.idu1;
     SPreference sp= new SPreference();
     Preference preference= new Preference(id, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
     

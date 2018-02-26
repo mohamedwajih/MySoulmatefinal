@@ -56,7 +56,7 @@ public class MesMatchsController implements Initializable {
     private Label adresse;
     @FXML
     private Label pourcent;
-    int id = 2;
+    int id = NewFXMain.idu1;
     @FXML
     private Label prenom;
    

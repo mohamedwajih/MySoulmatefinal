@@ -107,7 +107,7 @@ amiaffichage af=new amiaffichage();
                                     
                                     ImageView imageview=new ImageView(pic);
                                     setGraphic(imageview);
-                                    setText(p.getUsername());
+                                    setText("    "+p.getPrenom());
                                     
                                 }
                             }
@@ -207,12 +207,12 @@ amiaffichage af=new amiaffichage();
         }
                   }
                   else {
-            Alert alert = new Alert(Alert.AlertType.ERROR); 
-            alert.setTitle("Error");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION); 
+            alert.setTitle("Notice");
             alert.setHeaderText(null); 
             alert.setContentText("Vous n'avez pas des propositions des rendez_vous !");
             alert.showAndWait(); 
-            Parent  root = FXMLLoader.load(getClass().getResource("Listerdv.fxml"));
+                    Parent  root = FXMLLoader.load(getClass().getResource("Listerdv.fxml"));
                     Scene scene = new Scene(root);
                     Stage stage = new Stage();
                     stage.setScene(scene);

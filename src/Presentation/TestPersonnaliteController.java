@@ -53,7 +53,7 @@ public class TestPersonnaliteController implements Initializable {
     private ToggleGroup reponses;
    @FXML
     private Label nbquestion;
-    int id=2;
+    int id=NewFXMain.idu1;
     SPersonnalite sp= new SPersonnalite();
     Personnalite personnalite= new Personnalite(id, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
     

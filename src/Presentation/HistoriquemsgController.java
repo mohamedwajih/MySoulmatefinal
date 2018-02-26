@@ -39,6 +39,7 @@ import javafx.util.Callback;
 import javax.swing.JButton;
 import Services.SMessage;
 import Util.amiaffichage;
+import javafx.beans.binding.Bindings;
 
 /**
  * FXML Controller class
@@ -71,7 +72,7 @@ public class HistoriquemsgController implements Initializable {
         l1=af.listerall(NewFXMain.idu1);
         datauser.addAll(l1);
         for (int i = 0; i < datauser.size() ; i++) {
-           Image pic=new Image(datauser.get(i).getPhoto_de_profil(),80,60,true,true);
+           Image pic=new Image(datauser.get(i).getPhoto_de_profil(),95,180,true,true);
            ImageView im=new ImageView(pic);
            Image pic2=new Image("file:/C:/wamp64/www/Img/Check.png",80,60,true,true);
            ImageView im2=new ImageView(pic2);
@@ -93,6 +94,7 @@ public class HistoriquemsgController implements Initializable {
                                 if(p!=null) {
                                     setText("...");
                                     setText(p.getText());
+                                    setPrefHeight(75);
                                     
                                 }
                             }
@@ -150,6 +152,9 @@ public class HistoriquemsgController implements Initializable {
             }
             
             });
+            
+
+            
             listmsg.add(list, 1, i);
             listmsg.add(im, 0, i);
             listmsg.add(im2, 2, i);

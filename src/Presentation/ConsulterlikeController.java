@@ -67,7 +67,7 @@ public class ConsulterlikeController implements Initializable {
         Image image=new Image(listec.get(0).getPhoto_de_profil());
         pdp.setImage(image);
          System.out.println(listec.get(0));
-        username.setText(listec.get(0).getPrenom());
+        username.setText(listec.get(0).getPrenom()+" "+listec.get(0).getNom());
         age.setText(String.valueOf(listec.get(0).getAge())+" Ans");
         adresse.setText(listec.get(0).getAdresse());
         numtel.setText(String.valueOf(listec.get(0).getNum_tel()));
@@ -92,7 +92,7 @@ public class ConsulterlikeController implements Initializable {
         if(listec.size()!=compteur){
         Image image=new Image(listec.get(compteur).getPhoto_de_profil());
         pdp.setImage(image);
-        username.setText(listec.get(compteur).getPrenom());
+        username.setText(listec.get(compteur).getPrenom()+" "+listec.get(compteur).getNom());
         age.setText(String.valueOf(listec.get(compteur).getAge())+" Ans");
         adresse.setText(listec.get(compteur).getAdresse()); 
        numtel.setText(String.valueOf(listec.get(compteur).getNum_tel()));
@@ -120,7 +120,7 @@ public class ConsulterlikeController implements Initializable {
         if(listec.size()!=compteur){
         Image image=new Image(listec.get(compteur).getPhoto_de_profil());
         pdp.setImage(image);
-        username.setText(listec.get(compteur).getPrenom());
+        username.setText(listec.get(compteur).getPrenom()+" "+listec.get(compteur).getNom());
         age.setText(String.valueOf(listec.get(compteur).getAge())+" Ans");
         adresse.setText(listec.get(compteur).getAdresse());
         numtel.setText(String.valueOf(listec.get(compteur).getNum_tel()));

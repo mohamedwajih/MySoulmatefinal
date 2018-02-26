@@ -11,7 +11,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -48,6 +51,7 @@ public class amiaffichage {
                  res1.next();
                  Fos_user a = new Fos_user();
                   a.setUsername(res1.getString("username"));
+                  a.setPrenom(res1.getString("prenom"));
                   a.setId(res1.getInt("id"));
                   a.setPhoto_de_profil(res1.getString("photo_de_profil"));
                   a.setAge(res1.getInt("age"));
@@ -87,6 +91,7 @@ public class amiaffichage {
                   a.setAdresse(res1.getString("adresse"));
                   a.setPrenom(res1.getString("prenom"));
                   a.setNum_tel(res1.getInt("num_tel"));
+                  a.setNom(res1.getString("nom"));
                   
                  l1.add(a);
              }
@@ -110,6 +115,7 @@ public class amiaffichage {
              fs.setPhoto_de_profil(res.getString("photo_de_profil"));
              fs.setUsername(res.getString("username"));
              fs.setAge(res.getInt("age"));
+             fs.setNom(res.getString("nom"));
              fs.setAdresse(res.getString("adresse"));
              fs.setPrenom(res.getString("prenom"));
              fs.setNum_tel(res.getInt("num_tel"));
@@ -135,5 +141,25 @@ public class amiaffichage {
          }
          return p;
      }
-    
+    //////////////////////////////////////////////////////////////
+     public String getpref(int id){
+         String res="";
+         try {
+             String query="SELECT sportif,artiste,aventurier,sociable FROM  personnalite WHERE idUser="+id;
+             Statement st=cnx.createStatement();
+             Map<String,Integer> map=new HashMap<String,Integer>();
+             ResultSet rs=st.executeQuery(query);
+             rs.first();
+             map.put("sportif",rs.getInt("sportif"));
+              map.put("artiste",rs.getInt("artiste"));
+               map.put("aventurier",rs.getInt("aventurier"));
+                map.put("sociable",rs.getInt("sociable"));
+             res=map.entrySet().stream().max((entry1, entry2) -> entry1.getValue() > entry2.getValue() ? 1 : -1).get().getKey();
+
+             
+         } catch (SQLException ex) {
+             Logger.getLogger(amiaffichage.class.getName()).log(Level.SEVERE, null, ex);
+         }
+         return res;
+     }
 }
