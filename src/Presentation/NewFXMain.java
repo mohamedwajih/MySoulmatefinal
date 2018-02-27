@@ -30,20 +30,12 @@ public class NewFXMain extends Application {
    @Override
    public void start (Stage stage) throws IOException
 
-<<<<<<< HEAD
    {   
        Parent  root = FXMLLoader.load(getClass().getResource("MatchAdmin.fxml"));
 
       
 
-
-=======
-   {       
-       Parent  root = FXMLLoader.load(getClass().getResource("Ajouterplace.fxml"));
-
-    
-     
->>>>>>> f01bdc9a91d3f9ddb19e4d3621b1bc97eda3fedd
+      
        Scene scene = new Scene(root);
        stage.setScene(scene);
        stage.show();
