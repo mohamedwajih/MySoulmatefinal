@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="693.0" prefWidth="805.0" styleClass="matchs" stylesheets="file:/C:/wamp64/www/Img/stylesheet.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.MesMatchsController">
+   <children>
+      <ImageView fx:id="parchemin" fitHeight="647.0" fitWidth="731.0" layoutX="29.0" layoutY="18.0">
+         <image>
+            <Image url="file:/C:/wamp64/www/Img/fondmatchs.png" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
+      <Label fx:id="labelmatch" alignment="CENTER" layoutX="191.0" layoutY="32.0" prefHeight="139.0" prefWidth="412.0" styleClass="title" text="Mes Matchs" textFill="#ff6969" wrapText="true">
+         <font>
+            <Font name="Jellyka - Love and Passion" size="52.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Label>
+      <ImageView fx:id="imagecoeur" fitHeight="189.0" fitWidth="187.0" layoutX="551.0" layoutY="420.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/wamp64/www/Img/coeur.png" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
+      <Label fx:id="labelselection" layoutX="42.0" layoutY="590.0" prefHeight="75.0" prefWidth="639.0" text="Sélectionnez une question pour plus de détails" visible="false">
+         <font>
+            <Font name="LemonMilk" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="nom" alignment="CENTER" layoutX="258.0" layoutY="459.0" prefHeight="41.0" prefWidth="292.0" text="Nom">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="prenom" alignment="CENTER" layoutX="258.0" layoutY="496.0" prefHeight="41.0" prefWidth="292.0" text="Prenom">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="age" alignment="CENTER" layoutX="258.0" layoutY="534.0" prefHeight="41.0" prefWidth="292.0" text="Age">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="adresse" alignment="CENTER" layoutX="258.0" layoutY="569.0" prefHeight="41.0" prefWidth="298.0" text="Adresse">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="pourcent" layoutX="593.0" layoutY="467.0" prefHeight="84.0" prefWidth="120.0" text="100 %" textFill="WHITE">
+         <font>
+            <Font name="LemonMilk" size="38.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="photo" fitHeight="235.0" fitWidth="298.0" layoutX="296.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
+         <effect>
+            <DropShadow />
+         </effect>
+         <image>
+            <Image url="@../../../../../../../wamp64/www/Img/user_logo.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="flechegauche" fitHeight="91.0" fitWidth="96.0" layoutX="79.0" layoutY="286.0" onMouseClicked="#Previous" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/wamp64/www/Img/gauche.png" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
+      <ImageView fx:id="flechedroite" fitHeight="91.0" fitWidth="96.0" layoutX="631.0" layoutY="285.0" onMouseClicked="#Next" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/wamp64/www/Img/droite.png" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
+      <ImageView fx:id="like" fitHeight="128.0" fitWidth="91.0" layoutX="130.0" layoutY="468.0" onMouseClicked="#liker" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/wamp64/www/Img/poucegris.png" />
+         </image>
+      </ImageView>
+   </children>
+   <effect>
+      <InnerShadow />
+   </effect>
+</AnchorPane>

@@ -1,0 +1,69 @@
+.root {
+    -fx-background-image: url("coeurswallpaper.png");
+}
+
+.simplelabel
+{
+	-fx-font-family: "Robaga Rounded";
+	-fx-font-size: 24;
+	-fx-text-fill: black;
+}
+.title
+{
+	-fx-font-family: "Jellyka - Love and passion";
+	 -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) ,21.0,21.0,10.0,10.0,0 );
+	 -fx-font-color: pink;
+	 -fx-font-size:40;
+}
+.button {
+    -fx-padding: 5 22 5 22;   
+    -fx-background-radius: 0;
+    -fx-background-color: #DC143C;
+    -fx-font-family: "Robaga Rounded";
+    -fx-font-size: 12pt;
+    -fx-text-fill: #d8d8d8;
+    -fx-background-insets: 0 0 0 0, 0, 1, 2;
+
+}
+.smalllabel
+{
+	-fx-font-family: "Robaga Rounded";
+	-fx-font-size: 16;
+	-fx-text-fill: grey;
+}
+.button:hover {
+    -fx-background-color: linear-gradient( #DC143C, #dd8b8b);
+}
+
+.button:pressed, .button:default:hover:pressed {
+   -fx-background-color: linear-gradient( #DC143C, pink);
+  -fx-text-fill: #1d1d1d;
+}
+
+.button:focused {
+    -fx-border-color: white, white;
+    -fx-border-width: 1, 1;
+    -fx-border-style: solid, segments(1, 1);
+    -fx-border-radius: 0, 0;
+    -fx-border-insets: 1 1 1 1, 0;
+}
+
+.button:disabled, .button:default:disabled {
+    -fx-opacity: 0.4;
+    -fx-background-color: #1d1d1d;
+    -fx-text-fill: white;
+}
+
+.button:default {
+    -fx-background-color: -fx-focus-color;
+    -fx-text-fill: #ffffff;
+}
+
+.button:default:hover {
+    -fx-background-color: derive(-fx-focus-color,30%);
+}
+
+.rdv {
+    -fx-background-image: url("unforgettable-love-stories.jpg");
+}
+

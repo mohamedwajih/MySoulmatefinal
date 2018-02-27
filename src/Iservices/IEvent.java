@@ -23,6 +23,14 @@ public interface IEvent {
     public ArrayList<String> getListTypeEvents();
     public ArrayList<Event> getListEventsUser(int id_user_ev);
     public ArrayList<Integer> getIdUserCibleEvent(Event e);
-
-    
+public int getIdEvent(Event e);
+public void setParticipation(Event e);
+public void archverEvennement(Event e);
+ public ArrayList<Event> getArchive(int id_user);
+    public Event getEventArchiv(int id);
+    public void deletEventArchive(Event e) ;
+      public ArrayList<Event> getListEventPassé();
+       public ArrayList<Event> getListEventsUserPassé(int id_user_ev);
+       public List<Event> rechercher(String event);
+       public void modifierImage(String image,int id);
 }
