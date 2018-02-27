@@ -33,7 +33,7 @@ public interface IEvent {
     public ArrayList<Event> getListEventsUserPassé(int id_user_ev);
     public List<Event> rechercher(String event) ;
      public void modifierImage(String image,int id);
-    
+    public void mapInitialized();
 
     
 
