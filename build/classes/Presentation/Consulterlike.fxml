@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="658.0" prefWidth="876.0" styleClass="matchs" stylesheets="file:/C:/wamp64/www/Img/stylesheet.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.ConsulterlikeController">
+   <children>
+      <ImageView fitHeight="589.0" fitWidth="795.0" layoutX="53.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/wamp64/www/Img/Old_Open_Book_PNG_Clipart-1059.png" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
+      <ImageView fx:id="pdp" fitHeight="229.0" fitWidth="232.0" layoutX="148.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true">
+         <effect>
+            <InnerShadow choke="0.15" radius="12.965" width="32.86" />
+         </effect>
+         <image>
+            <Image url="file:/C:/wamp64/www/Img/user_logo.png" />
+         </image></ImageView>
+      <Label fx:id="username" alignment="CENTER" contentDisplay="CENTER" layoutX="75.0" layoutY="386.0" prefHeight="172.0" prefWidth="413.0" styleClass="title" text="nom" textAlignment="CENTER" />
+      <Label fx:id="age" alignment="CENTER" layoutX="544.0" layoutY="374.0" prefHeight="35.0" prefWidth="165.0" text="age">
+         <font>
+            <Font name="Blackadder ITC" size="28.0" />
+         </font></Label>
+      <Label fx:id="adresse" alignment="CENTER" layoutX="473.0" layoutY="290.0" prefHeight="40.0" prefWidth="349.0" text="adresse">
+         <font>
+            <Font name="Blackadder ITC" size="28.0" />
+         </font></Label>
+      <ImageView fitHeight="100.0" fitWidth="99.0" layoutX="538.0" layoutY="452.0" onMouseClicked="#like" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/wamp64/www/Img/poucerouge.png" />
+         </image>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </ImageView>
+      <ImageView fitHeight="103.0" fitWidth="95.0" layoutX="683.0" layoutY="468.0" onMouseClicked="#deslike" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+         <image>
+            <Image url="file:/C:/wamp64/www/Img/poucegris.png" />
+         </image>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </ImageView>
+      <Label fx:id="comp" layoutX="254.0" layoutY="566.0" prefHeight="42.0" prefWidth="71.0" text="Label">
+         <font>
+            <Font name="Blackadder ITC" size="26.0" />
+         </font></Label>
+      <Label alignment="CENTER" layoutX="525.0" layoutY="351.0" text="Age:" textFill="#4d4c4c">
+         <font>
+            <Font name="Blackadder ITC" size="27.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="501.0" layoutY="260.0" prefHeight="39.0" prefWidth="136.0" text="Adresse:" textFill="#4d4c4c">
+         <font>
+            <Font name="Blackadder ITC" size="27.0" />
+         </font>
+      </Label>
+      <Label fx:id="numtel" alignment="CENTER" layoutX="559.0" layoutY="245.0" prefHeight="35.0" prefWidth="143.0" text="Label" visible="false">
+         <font>
+            <Font name="Blackadder ITC" size="28.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="172.0" fitWidth="172.0" layoutX="563.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/wamp64/www/Img/coeur.png" />
+         </image>
+         <effect>
+            <InnerShadow radius="8.25" width="14.0" />
+         </effect>
+      </ImageView>
+      <Label fx:id="pourcent" layoutX="608.0" layoutY="103.0" prefHeight="92.0" prefWidth="153.0" rotate="-18.4" text="Label" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="52.0" layoutY="44.0" prefHeight="108.0" prefWidth="405.0" styleClass="title" stylesheets="@stylesheet.css" text="Livre des Likes" />
+   </children>
+   <effect>
+      <InnerShadow />
+   </effect>
+</AnchorPane>

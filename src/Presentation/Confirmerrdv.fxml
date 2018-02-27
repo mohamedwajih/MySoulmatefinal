@@ -11,7 +11,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="604.0" prefWidth="961.0" style="-fx-background-size: 1000;" styleClass="confirmer" stylesheets="file:/C:/wamp64/www/Img/stylesheet.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.ConfirmerrdvController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f0dadaaf" height="519.0" layoutX="17.0" layoutY="61.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="930.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff99" height="519.0" layoutX="17.0" layoutY="61.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="930.0" />
       <ImageView fx:id="pdp" fitHeight="245.0" fitWidth="219.0" layoutX="697.0" layoutY="136.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="file:/C:/wamp64/www/Img/user_logo.png" />
@@ -25,7 +25,7 @@
             <Font name="Impact" size="32.0" />
          </font>
       </Label>
-      <ImageView fitHeight="54.0" fitWidth="75.0" layoutX="845.0" layoutY="500.0" onMouseClicked="#confirmer" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="54.0" fitWidth="75.0" layoutX="858.0" layoutY="500.0" onMouseClicked="#confirmer" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="file:/C:/wamp64/www/Img/notok.png" />
          </image>
@@ -41,7 +41,7 @@
             <DropShadow />
          </effect>
       </ImageView>
-      <ImageView fitHeight="59.0" fitWidth="65.0" layoutX="35.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="59.0" fitWidth="65.0" layoutX="35.0" layoutY="184.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="file:/C:/wamp64/www/Img/clock.png" />
          </image>
@@ -49,20 +49,18 @@
             <InnerShadow />
          </effect>
       </ImageView>
-      <ImageView fitHeight="62.0" fitWidth="77.0" layoutX="47.0" layoutY="295.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="file:/C:/wamp64/www/Img/google-pushpin-md.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="imagelieu" fitHeight="236.0" fitWidth="358.0" layoutX="71.0" layoutY="328.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imagelieu" fitHeight="236.0" fitWidth="358.0" layoutX="71.0" layoutY="328.0" pickOnBounds="true" preserveRatio="true">
+         <effect>
+            <InnerShadow />
+         </effect></ImageView>
       <ImageView fitHeight="47.0" fitWidth="219.0" layoutX="723.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="file:/C:/wamp64/www/Img/soulmate.png" />
          </image>
       </ImageView>
-      <Label fx:id="nomami" layoutX="450.0" layoutY="269.0" prefHeight="116.0" prefWidth="260.0" text="nom">
+      <Label fx:id="nomami" layoutX="450.0" layoutY="269.0" prefHeight="116.0" prefWidth="367.0" text="nom">
          <font>
-            <Font name="Jellyka - Love and Passion" size="43.0" />
+            <Font name="Jellyka - Love and Passion" size="33.0" />
          </font>
       </Label>
       <Label layoutX="605.0" layoutY="424.0" text="un Rendez-vous" textFill="#da6565">
@@ -70,23 +68,23 @@
             <Font name="Impact" size="32.0" />
          </font>
       </Label>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#171717af" height="58.0" layoutX="422.0" layoutY="69.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="120.0" />
-      <Label fx:id="daysleft1" layoutX="499.0" layoutY="68.0" prefHeight="62.0" prefWidth="46.0" text="9" textFill="WHITE">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffffb0" height="58.0" layoutX="434.0" layoutY="69.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="97.0" />
+      <Label fx:id="daysleft1" layoutX="499.0" layoutY="68.0" prefHeight="62.0" prefWidth="46.0" text="9" textFill="#ee3232">
          <font>
             <Font name="Digital-7" size="73.0" />
          </font>
       </Label>
-      <Label fx:id="daysleft2" layoutX="466.0" layoutY="70.0" prefHeight="25.0" prefWidth="20.0" text="9" textFill="WHITE">
+      <Label fx:id="daysleft2" layoutX="466.0" layoutY="70.0" prefHeight="25.0" prefWidth="20.0" text="9" textFill="#ee3232">
          <font>
             <Font name="Digital-7" size="73.0" />
          </font>
       </Label>
-      <Label fx:id="daysleft3" layoutX="433.0" layoutY="70.0" text="9" textFill="WHITE">
+      <Label fx:id="daysleft3" layoutX="433.0" layoutY="70.0" text="9" textFill="#ee3232">
          <font>
             <Font name="Digital-7" size="73.0" />
          </font>
       </Label>
-      <Label layoutX="453.0" layoutY="128.0" text="Jours">
+      <Label layoutX="456.0" layoutY="128.0" text="Jours">
          <font>
             <Font name="Colleged" size="14.0" />
          </font>
@@ -96,21 +94,26 @@
             <Font name="Colleged" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="551.0" layoutY="110.0" text="!" textFill="#ba0202c2">
+      <Label layoutX="551.0" layoutY="110.0" text="!" textFill="#0000009d">
          <font>
             <Font name="System Bold" size="56.0" />
          </font>
       </Label>
-      <Label fx:id="date" layoutX="97.0" layoutY="149.0" prefHeight="43.0" prefWidth="220.0" text="Label">
+      <Label fx:id="date" layoutX="97.0" layoutY="202.0" prefHeight="43.0" prefWidth="316.0" text="Label">
          <font>
-            <Font name="System Bold" size="29.0" />
+            <Font name="System Bold" size="22.0" />
          </font>
       </Label>
-      <Label fx:id="lieu" layoutX="127.0" layoutY="286.0" prefHeight="51.0" prefWidth="243.0" text="Label">
+      <Label fx:id="lieu" layoutX="127.0" layoutY="286.0" prefHeight="51.0" prefWidth="330.0" text="Label">
          <font>
-            <Font name="System Bold" size="29.0" />
+            <Font name="System Bold" size="19.0" />
          </font>
       </Label>
+      <ImageView fitHeight="62.0" fitWidth="77.0" layoutX="47.0" layoutY="295.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/wamp64/www/Img/google-pushpin-md.png" />
+         </image>
+      </ImageView>
    </children>
    <effect>
       <InnerShadow />

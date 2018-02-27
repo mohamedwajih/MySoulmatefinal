@@ -91,8 +91,10 @@ public class MesMatchsController implements Initializable {
         SAmi sa=new SAmi();
         if(sa.chercherami(id,matchs.get(compteur).getIdUser2())==false){
              like.setImage(poucegris);
+             like.setRotate(180);
         }else {
                     like.setImage(poucerouge);
+                    like.setRotate(0);
         }
            
     }

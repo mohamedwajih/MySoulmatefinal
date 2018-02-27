@@ -36,9 +36,9 @@ public class ConfirmerrdvController implements Initializable {
     @FXML
     private ImageView pdp;
     @FXML
-    private TextField date;
+    private Label date;
     @FXML
-    private TextField lieu;
+    private Label lieu;
     @FXML
     private ImageView imagelieu;
     @FXML
