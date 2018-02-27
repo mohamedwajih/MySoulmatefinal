@@ -14,7 +14,7 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f0dadaaf" height="519.0" layoutX="17.0" layoutY="61.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="930.0" />
       <ImageView fx:id="pdp" fitHeight="245.0" fitWidth="219.0" layoutX="697.0" layoutY="136.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../wamp64/www/Img/user_logo.png" />
+            <Image url="file:/C:/wamp64/www/Img/user_logo.png" />
          </image>
          <effect>
             <InnerShadow />
