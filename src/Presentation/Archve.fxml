@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.ArchveController">
+    <children>
+      <ListView id="listArchive" fx:id="listA" layoutY="116.0" onMouseClicked="#getArchiv" prefHeight="269.0" prefWidth="596.0" />
+      <Label layoutX="244.0" layoutY="71.0" prefHeight="17.0" prefWidth="246.0" text="Mon archive" />
+   </children>
+</AnchorPane>

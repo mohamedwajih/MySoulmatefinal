@@ -28,7 +28,7 @@ public class ResultatsTestController implements Initializable {
     private AreaChart<Float, String> AreaChart;
     SPersonnalite sper= new SPersonnalite();
     SPreference spre= new SPreference();
-    int id=1;
+    int id=NewFXMain.idu1;
     @FXML
     private NumberAxis axepourcentage;
     @FXML
