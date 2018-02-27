@@ -46,10 +46,10 @@ public class SAmi  implements IAmi{
             Statement st=cnx.createStatement();
             st.executeUpdate(query);
             System.out.println("new ami added");
-            Notification newnotif=new Notification(0,a.getId_u2(),"like","new like",LocalDate.now());
+          Notification n= new Notification(0,a.getId_u2(),a.getId_u1(),"like","new like",LocalDate.now(),"file:/C:/wamp64/www/Img/clock.png");
             NotificationServices ns=new NotificationServices();
            
-            ns.addNotification(newnotif);
+            ns.addNotification(n);
         } catch (SQLException ex) {
             Logger.getLogger(SAmi.class.getName()).log(Level.SEVERE, null, ex);
         }
