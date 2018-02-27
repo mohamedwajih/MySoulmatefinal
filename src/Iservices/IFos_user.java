@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package IServices;
+package Iservices;
 
 import Entities.Fos_user;
 import java.util.List;
@@ -38,8 +38,14 @@ public interface IFos_user {
 
     public void activerCompte(int id);
 
-    public boolean Authentifier(String login, String password);
+    public boolean Authentifier(String login, String password );
 
-    public boolean verifCompte(int id);
+    public boolean verifier_compte(int id);
+    
+    public boolean verifier_username(String login);
+        public boolean verifier_email(String login);
+           public void validerCompte(String code);
+  public void modifierImage(String image,int id);
+  
 
 }
