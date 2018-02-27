@@ -25,6 +25,7 @@ public interface IEvent {
     public ArrayList<Event> getListEventsUser(int id_user_ev);
     public ArrayList<Integer> getIdUserCibleEvent(Event e);
 <<<<<<< HEAD
+<<<<<<< HEAD
 public int getIdEvent(Event e);
 public void setParticipation(Event e);
 public void archverEvennement(Event e);
@@ -36,6 +37,8 @@ public void archverEvennement(Event e);
        public List<Event> rechercher(String event);
        public void modifierImage(String image,int id);
 =======
+=======
+>>>>>>> 11d6054ad30d2d9224d93ec307caeae86a12c2d9
     public void setParticipation(Event e);
     public void archverEvennement(Event e);
     public ArrayList<Event> getArchive(int id_user);

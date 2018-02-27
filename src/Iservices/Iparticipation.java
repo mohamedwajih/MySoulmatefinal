@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 package Iservices;
 
 import Entities.Participation;
@@ -16,6 +17,8 @@ public interface Iparticipation {
     public void addParticipation(Participation p) ;
     public void deleteParticipation(Participation p);
 =======
+=======
+>>>>>>> 11d6054ad30d2d9224d93ec307caeae86a12c2d9
 package IServices;
 
 import Entities.Participation;
@@ -30,6 +33,9 @@ public interface Iparticipation {
     public void deleteParticipation(Participation p);
     public ArrayList<Participation> getParticipations(int id_event);
    
+<<<<<<< HEAD
 >>>>>>> origin/master
+=======
+>>>>>>> 11d6054ad30d2d9224d93ec307caeae86a12c2d9
     
 }
