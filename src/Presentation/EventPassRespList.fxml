@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.EventPassRespListController">
+     <children>
+      <ListView id="listEvent" fx:id="listEvent" layoutX="66.0" layoutY="108.0" onMouseClicked="#getevent" prefHeight="269.0" prefWidth="468.0" />
+      <Label layoutX="244.0" layoutY="71.0" prefHeight="17.0" prefWidth="246.0" text="Évènements Passés" />
+   </children>
+</AnchorPane>

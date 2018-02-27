@@ -5,7 +5,7 @@
  */
 package Services;
 
-import DataStorage.MySoulmateDB;
+import DataStorage.Mydb;
 import Entities.Participation;
 import IServices.Iparticipation;
 import java.sql.Connection;
@@ -22,7 +22,7 @@ public class ParticipationService  implements Iparticipation{
     
      Connection connexion;
     public ParticipationService(){
-          connexion = MySoulmateDB.getinstance().getConnexion();
+          connexion = Mydb.getinstance().getCnx();
     }
 
     @Override
