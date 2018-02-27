@@ -11,7 +11,7 @@ import Entities.Matching;
 import Entities.Question;
 import Services.SMatching;
 import Services.SQuestion;
-import Services.SUser;
+import Services.Fos_userServices;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -61,7 +61,7 @@ public class MesMatchsController implements Initializable {
     private Label prenom;
    
     SMatching sm = new SMatching();
-    SUser su = new SUser();
+    Fos_userServices su = new Fos_userServices();
  
     List<Matching> matchs = new ArrayList<>(sm.listerOne(id));
     int compteur=0;

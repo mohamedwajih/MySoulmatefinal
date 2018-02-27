@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="a1" prefHeight="545.0" prefWidth="835.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane fx:id="a2" layoutX="-8.0" prefHeight="278.0" prefWidth="271.0" style="-fx-background-color: #1D2026;">
+         <children>
+            <Pane fx:id="p1" prefHeight="94.0" prefWidth="271.0" style="-fx-background-color: #1D2026;">
+               <children>
+                  <Label fx:id="lab1" layoutX="10.0" layoutY="25.0" text="“Our universe grants every soul a twin&quot;" textFill="#f5f2f2">
+                     <font>
+                        <Font name="Jokerman" size="13.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="img1" fitHeight="49.0" fitWidth="139.0" layoutX="82.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Desktop/maxresdefault.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <Pane fx:id="p2" layoutX="262.0" prefHeight="181.0" prefWidth="515.0">
+         <children>
+            <TextField fx:id="rech" layoutX="24.0" layoutY="22.0" prefHeight="25.0" prefWidth="381.0" promptText="Rechercher ami , évennement" />
+            <ImageView fx:id="profil" fitHeight="94.0" fitWidth="100.0" layoutX="334.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="MB" layoutX="14.0" layoutY="159.0" text="Manon Belger" textFill="#170101">
+               <font>
+                  <Font name="Arial Bold" size="13.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnrech" layoutX="421.0" layoutY="20.0" mnemonicParsing="false" style="-fx-background-color: #1D2026;" text="Rechercher" textFill="#f5f4f4">
+               <font>
+                  <Font name="Jokerman" size="12.0" />
+               </font>
+            </Button>
+            <ImageView fx:id="noir1" fitHeight="73.0" fitWidth="123.0" layoutX="390.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true" />
+            <Pane fx:id="p3" layoutY="60.0" prefHeight="73.0" prefWidth="200.0" style="-fx-background-color: #1D2026;">
+               <children>
+                  <ImageView fitHeight="123.0" fitWidth="86.0" layoutY="-11.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Desktop/95033708.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="p4" layoutX="200.0" layoutY="60.0" prefHeight="73.0" prefWidth="200.0" style="-fx-background-color: #1D2026;">
+               <children>
+                  <Label fx:id="titre" contentDisplay="CENTER" layoutX="-52.0" layoutY="12.0" prefHeight="49.0" prefWidth="308.0" text="Fil d'actualité" textFill="#d30808">
+                     <font>
+                        <Font name="Jokerman" size="37.0" />
+                     </font>
+                  </Label>
+                  <Pane fx:id="p6" layoutX="200.0" prefHeight="73.0" prefWidth="123.0" style="-fx-background-color: #1D2026;" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <TableView fx:id="tvpublication" layoutY="278.0" prefHeight="259.0" prefWidth="771.0">
+         <columns>
+            <TableColumn fx:id="pub" prefWidth="320.0" text="Publication" />
+            <TableColumn fx:id="date" prefWidth="75.0" text="date" />
+         </columns>
+      </TableView>
+      <Button fx:id="ajouter" layoutX="683.0" layoutY="185.0" mnemonicParsing="false" onAction="#ajoutAction" prefHeight="35.0" prefWidth="72.0" style="-fx-background-color: #1D2026;" text="Publier" textFill="#f8f3f3">
+         <font>
+            <Font name="Jokerman" size="14.0" />
+         </font>
+      </Button>
+      <TextField fx:id="tfpub" layoutX="278.0" layoutY="185.0" prefHeight="73.0" prefWidth="381.0" promptText="Exprimer vous !!" />
+   </children>
+</AnchorPane>
