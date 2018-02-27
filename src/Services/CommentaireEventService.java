@@ -5,10 +5,10 @@
  */
 package Services;
 
-import DataStorage.MySoulmateDB;
+import DataStorage.Mydb;
 import Entities.CommentaireEvent;
 import Entities.Event;
-import IServices.ICommentaireEvent;
+import Iservices.ICommentaireEvent;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -23,7 +23,7 @@ import java.util.ArrayList;
 public class CommentaireEventService implements ICommentaireEvent {
  Connection connexion;
     public CommentaireEventService(){
-          connexion = MySoulmateDB.getinstance().getConnexion();
+          connexion = Mydb.getinstance().getCnx();
     }
     @Override
     public void addComment(CommentaireEvent c) {

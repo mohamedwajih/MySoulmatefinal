@@ -1,10 +1,10 @@
 
 package Services;
 
-import DataStorage.MySoulmateDB;
+import DataStorage.Mydb;
 import Entities.Event;
 import Entities.Notification;
-import IServices.INotification;
+import Iservices.INotification;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,7 +17,7 @@ import java.util.Date;
 public class NotificationServices implements INotification {
  Connection connexion;
     public NotificationServices(){
-          connexion = MySoulmateDB.getinstance().getConnexion();
+          connexion = Mydb.getinstance().getCnx();
     }
     @Override
     public void addNotification(Notification n) {
