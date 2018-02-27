@@ -10,7 +10,7 @@ import Entities.Preference;
 import Services.SMatching;
 import Services.SPersonnalite;
 import Services.SPreference;
-import Services.SUser;
+import Services.Fos_userServices;
 import Util.util;
 import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Document;
@@ -51,7 +51,7 @@ import javafx.scene.control.Label;
  */
 public class MatchAdminController implements Initializable {
 
-    SUser su= new SUser();
+    Fos_userServices su= new Fos_userServices();
     SMatching sm= new SMatching(); 
     
     @FXML
