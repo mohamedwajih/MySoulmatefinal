@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="631.0" prefWidth="990.0" styleClass="listrdv" stylesheets="file:/C:/wamp64/www/Img/stylesheet.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.ListerdvController">
+   <children>
+      <ImageView fitHeight="594.0" fitWidth="965.0" layoutX="24.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/wamp64/www/Img/notebook3.png" />
+         </image>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </ImageView>
+      <ImageView fx:id="pdp" fitHeight="226.0" fitWidth="256.0" layoutX="135.0" layoutY="92.0" pickOnBounds="true" preserveRatio="true" rotate="-20.0">
+         <effect>
+            <InnerShadow choke="0.33" height="44.72" radius="24.085" width="53.62" />
+         </effect>
+         <image>
+            <Image url="file:/C:/wamp64/www/Img/user_logo.png" />
+         </image></ImageView>
+      <Label fx:id="nom" layoutX="239.0" layoutY="399.0" prefHeight="35.0" prefWidth="126.0" text="nom">
+         <font>
+            <Font size="27.0" />
+         </font></Label>
+      <Label fx:id="age" layoutX="318.0" layoutY="339.0" prefHeight="41.0" prefWidth="98.0" styleClass="simplelabel" text="age" />
+      <ImageView fitHeight="27.0" fitWidth="119.0" layoutX="89.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/wamp64/www/Img/soulmate.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="date" layoutX="609.0" layoutY="454.0" prefHeight="44.0" prefWidth="285.0" styleClass="simplelabel" text="Label" />
+      <Label fx:id="place" layoutX="612.0" layoutY="329.0" prefHeight="55.0" prefWidth="285.0" styleClass="simplelabel" text="Label" />
+      <ImageView fitHeight="81.0" fitWidth="94.0" layoutX="621.0" layoutY="376.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/wamp64/www/Img/clock.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="lieu" fitHeight="194.0" fitWidth="332.0" layoutX="608.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true">
+         <effect>
+            <InnerShadow choke="0.5" radius="12.225" width="29.9" />
+         </effect>
+         <image>
+            <Image url="file:/C:/wamp64/www/Img/unforgettable-love-stories.jpg" />
+         </image></ImageView>
+      <ImageView fitHeight="115.0" fitWidth="103.0" layoutX="628.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/wamp64/www/Img/google-pushpin-md.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="61.0" fitWidth="74.0" layoutX="155.0" layoutY="83.0">
+         <image>
+            <Image url="file:/C:/wamp64/www/Img/pushpin-147918_960_720.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="prenom" layoutX="150.0" layoutY="401.0" text="Prenom">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="41.0" fitWidth="47.0" layoutX="129.0" layoutY="456.0">
+         <image>
+            <Image url="file:/C:/wamp64/www/Img/home.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="prev" fitHeight="41.0" fitWidth="73.0" layoutX="77.0" layoutY="548.0" onMouseClicked="#preced">
+         <image>
+            <Image url="file:/C:/wamp64/www/Img/gauche.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="nex" fitHeight="41.0" fitWidth="73.0" layoutX="860.0" layoutY="545.0" onMouseClicked="#suiv">
+         <image>
+            <Image url="file:/C:/wamp64/www/Img/droite.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="adresse" layoutX="183.0" layoutY="453.0" prefHeight="43.0" prefWidth="205.0" text="Label">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+   </children>
+   <effect>
+      <InnerShadow />
+   </effect>
+</AnchorPane>
