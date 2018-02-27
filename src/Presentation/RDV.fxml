@@ -91,7 +91,7 @@
       </ImageView>
       <Separator layoutX="14.0" layoutY="281.0" prefHeight="27.0" prefWidth="210.0" />
       <Separator layoutX="583.0" layoutY="258.0" prefHeight="0.0" prefWidth="152.0" />
-      <ImageView fitHeight="151.0" fitWidth="229.0" layoutX="380.0" layoutY="10.0" rotate="-170.7">
+      <ImageView fitHeight="151.0" fitWidth="229.0" layoutX="383.0" layoutY="13.0" rotate="-170.7">
          <image>
             <Image url="file:/C:/wamp64/www/Img/bulle_img_bulle06.png" />
          </image>
@@ -100,6 +100,9 @@
       <Label layoutX="410.0" layoutY="77.0" prefHeight="17.0" prefWidth="165.0" text="Personnalié nous savons que " />
       <Label layoutX="418.0" layoutY="94.0" text="cette personne est attirée" />
       <Label layoutX="439.0" layoutY="111.0" text="par la thématique" />
-      <Label fx:id="theme" layoutX="501.0" layoutY="127.0" text="thème" />
+      <Label fx:id="theme" layoutX="501.0" layoutY="127.0" text="thème">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
    </children>
 </AnchorPane>

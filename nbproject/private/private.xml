@@ -3,11 +3,29 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/asus/Documents/GitHub/MySoulmatefinal/src/Presentation/MesMatchsController.java</file>
+            <file>file:/C:/Users/asus/Documents/GitHub/MySoulmatefinal/src/Util/sendsms.java</file>
+            <file>file:/C:/Users/asus/Documents/GitHub/MySoulmatefinal/src/Services/CommentaireEventService.java</file>
+            <file>file:/C:/Users/asus/Documents/GitHub/MySoulmatefinal/src/Iservices/INotification.java</file>
+            <file>file:/C:/Users/asus/Documents/GitHub/MySoulmatefinal/src/Presentation/MatchAdminController.java</file>
+            <file>file:/C:/Users/asus/Documents/GitHub/MySoulmatefinal/src/Util/datapik.java</file>
+            <file>file:/C:/Users/asus/Documents/GitHub/MySoulmatefinal/src/Services/EventService.java</file>
+            <file>file:/C:/Users/asus/Documents/GitHub/MySoulmatefinal/src/Services/NotificationServices.java</file>
+            <file>file:/C:/Users/asus/Documents/GitHub/MySoulmatefinal/src/Util/PostFile.java</file>
+            <file>file:/C:/Users/asus/Documents/GitHub/MySoulmatefinal/src/Util/util.java</file>
+            <file>file:/C:/Users/asus/Documents/GitHub/MySoulmatefinal/src/Entities/Notification.java</file>
+            <file>file:/C:/Users/asus/Documents/GitHub/MySoulmatefinal/src/Presentation/ConfirmerrdvController.java</file>
+            <file>file:/C:/Users/asus/Documents/GitHub/MySoulmatefinal/src/Presentation/AjouterEvennementController.java</file>
             <file>file:/C:/Users/asus/Documents/GitHub/MySoulmatefinal/src/Presentation/AjouterplaceController.java</file>
+            <file>file:/C:/Users/asus/Documents/GitHub/MySoulmatefinal/src/Services/ParticipationService.java</file>
+            <file>file:/C:/Users/asus/Documents/GitHub/MySoulmatefinal/src/Util/Role.java</file>
             <file>file:/C:/Users/asus/Documents/GitHub/MySoulmatefinal/src/Presentation/NewFXMain.java</file>
+            <file>file:/C:/Users/asus/Documents/GitHub/MySoulmatefinal/src/Util/amiaffichage.java</file>
+            <file>file:/C:/Users/asus/Documents/GitHub/MySoulmatefinal/src/Services/SMessage.java</file>
             <file>file:/C:/Users/asus/Documents/GitHub/MySoulmatefinal/src/Services/SRdv.java</file>
             <file>file:/C:/Users/asus/Documents/GitHub/MySoulmatefinal/src/Services/SAmi.java</file>
-            <file>file:/C:/Users/asus/Documents/GitHub/MySoulmatefinal/src/Presentation/ConfirmerrdvController.java</file>
+            <file>file:/C:/Users/asus/Documents/GitHub/MySoulmatefinal/src/Iservices/IEvent.java</file>
+            <file>file:/C:/Users/asus/Documents/GitHub/MySoulmatefinal/src/Iservices/IMatching.java</file>
         </group>
     </open-files>
 </project-private>
