@@ -1,112 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="661.0" prefWidth="961.0" style="-fx-background-size: 1000;" styleClass="confirmer" stylesheets="file:/C:/wamp64/www/Img/stylesheet.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.ConfirmerrdvController">
+<AnchorPane id="AnchorPane" prefHeight="604.0" prefWidth="961.0" style="-fx-background-size: 1000;" styleClass="confirmer" stylesheets="file:/C:/wamp64/www/Img/stylesheet.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.ConfirmerrdvController">
    <children>
-      <ImageView fx:id="pdp" fitHeight="245.0" fitWidth="219.0" layoutX="739.0" layoutY="203.0" pickOnBounds="true" preserveRatio="true">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f0dadaaf" height="519.0" layoutX="17.0" layoutY="61.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="930.0" />
+      <ImageView fx:id="pdp" fitHeight="245.0" fitWidth="219.0" layoutX="697.0" layoutY="136.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="file:/C:/Users/asus/Documents/NetBeansProjects/Mysoulmatewajih/Ress/ami1.jpg" />
+            <Image url="@../../../../../../../wamp64/www/Img/user_logo.png" />
          </image>
+         <effect>
+            <InnerShadow />
+         </effect>
       </ImageView>
-      <Label layoutX="471.0" layoutY="385.0" prefHeight="78.0" prefWidth="232.0" text="Vous propose " textFill="#e1e1e1">
+      <Label layoutX="473.0" layoutY="367.0" prefHeight="78.0" prefWidth="232.0" text="Vous propose ">
          <font>
             <Font name="Impact" size="32.0" />
          </font>
       </Label>
-      <ImageView fitHeight="54.0" fitWidth="75.0" layoutX="880.0" layoutY="591.0" onMouseClicked="#confirmer" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="54.0" fitWidth="75.0" layoutX="845.0" layoutY="500.0" onMouseClicked="#confirmer" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="file:/C:/wamp64/www/Img/notok.png" />
          </image>
+         <effect>
+            <DropShadow />
+         </effect>
       </ImageView>
-      <ImageView fitHeight="54.0" fitWidth="54.0" layoutX="778.0" layoutY="595.0" onMouseClicked="#supprimer" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="54.0" fitWidth="54.0" layoutX="774.0" layoutY="507.0" onMouseClicked="#supprimer" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="file:/C:/wamp64/www/Img/ok.png" />
          </image>
+         <effect>
+            <DropShadow />
+         </effect>
       </ImageView>
-      <ImageView fitHeight="59.0" fitWidth="65.0" layoutX="10.0" layoutY="289.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="59.0" fitWidth="65.0" layoutX="35.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="file:/C:/wamp64/www/Img/clock.png" />
          </image>
+         <effect>
+            <InnerShadow />
+         </effect>
       </ImageView>
-      <ImageView fitHeight="98.0" fitWidth="60.0" layoutX="291.0" layoutY="380.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="62.0" fitWidth="77.0" layoutX="47.0" layoutY="295.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="file:/C:/wamp64/www/Img/google-pushpin-md.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imagelieu" fitHeight="236.0" fitWidth="358.0" layoutX="42.0" layoutY="417.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="742.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imagelieu" fitHeight="236.0" fitWidth="358.0" layoutX="71.0" layoutY="328.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="47.0" fitWidth="219.0" layoutX="723.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="file:/C:/wamp64/www/Img/soulmate.png" />
          </image>
       </ImageView>
-      <Label fx:id="nomami" layoutX="507.0" layoutY="304.0" prefHeight="116.0" prefWidth="260.0" text="nom" textFill="#e1e1e1">
+      <Label fx:id="nomami" layoutX="450.0" layoutY="269.0" prefHeight="116.0" prefWidth="260.0" text="nom">
          <font>
             <Font name="Jellyka - Love and Passion" size="43.0" />
          </font>
       </Label>
-      <Label layoutX="492.0" layoutY="441.0" text="un Rendez-vous" textFill="#da6565">
+      <Label layoutX="605.0" layoutY="424.0" text="un Rendez-vous" textFill="#da6565">
          <font>
             <Font name="Impact" size="32.0" />
          </font>
       </Label>
-      <ImageView fitHeight="87.0" fitWidth="115.0" layoutX="165.0" layoutY="47.0" rotate="90.0">
-         <image>
-            <Image url="file:/C:/wamp64/www/Img/rec.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="87.0" fitWidth="115.0" layoutX="105.0" layoutY="47.0" rotate="90.0">
-         <image>
-            <Image url="file:/C:/wamp64/www/Img/rec.png" />
-         </image>
-      </ImageView>
-      <Label text="Label" />
-      <Label fx:id="daysleft1" layoutX="200.0" layoutY="52.0" text="9" textFill="#b90000">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#171717af" height="58.0" layoutX="422.0" layoutY="69.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="120.0" />
+      <Label fx:id="daysleft1" layoutX="499.0" layoutY="68.0" prefHeight="62.0" prefWidth="46.0" text="9" textFill="WHITE">
          <font>
-            <Font name="Digital-7" size="96.0" />
-         </font></Label>
-      <Label fx:id="daysleft2" layoutX="141.0" layoutY="51.0" prefHeight="25.0" prefWidth="20.0" text="9" textFill="#b90000">
-         <font>
-            <Font name="Digital-7" size="96.0" />
+            <Font name="Digital-7" size="73.0" />
          </font>
       </Label>
-      <ImageView fitHeight="87.0" fitWidth="115.0" layoutX="45.0" layoutY="47.0" rotate="90.0">
-         <image>
-            <Image url="file:/C:/wamp64/www/Img/rec.png" />
-         </image>
-      </ImageView>
-      <Label fx:id="daysleft3" layoutX="83.0" layoutY="51.0" text="9" textFill="#b90000">
+      <Label fx:id="daysleft2" layoutX="466.0" layoutY="70.0" prefHeight="25.0" prefWidth="20.0" text="9" textFill="WHITE">
          <font>
-            <Font name="Digital-7" size="96.0" />
-         </font></Label>
-      <Label layoutX="120.0" layoutY="139.0" text="Jours">
-         <font>
-            <Font name="Colleged" size="21.0" />
+            <Font name="Digital-7" size="73.0" />
          </font>
       </Label>
-      <Label layoutX="70.0" layoutY="159.0" text="Restant ">
+      <Label fx:id="daysleft3" layoutX="433.0" layoutY="70.0" text="9" textFill="WHITE">
          <font>
-            <Font name="Colleged" size="33.0" />
+            <Font name="Digital-7" size="73.0" />
          </font>
       </Label>
-      <Label layoutX="271.0" layoutY="140.0" text="!" textFill="#b90000">
+      <Label layoutX="453.0" layoutY="128.0" text="Jours">
+         <font>
+            <Font name="Colleged" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="427.0" layoutY="146.0" text="Restants ">
+         <font>
+            <Font name="Colleged" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="551.0" layoutY="110.0" text="!" textFill="#ba0202c2">
          <font>
             <Font name="System Bold" size="56.0" />
          </font>
       </Label>
-      <Label fx:id="date" layoutX="101.0" layoutY="267.0" prefHeight="43.0" prefWidth="220.0" text="Label">
+      <Label fx:id="date" layoutX="97.0" layoutY="149.0" prefHeight="43.0" prefWidth="220.0" text="Label">
          <font>
-            <Font size="29.0" />
+            <Font name="System Bold" size="29.0" />
          </font>
       </Label>
-      <Label fx:id="lieu" layoutX="83.0" layoutY="337.0" prefHeight="51.0" prefWidth="243.0" text="Label">
+      <Label fx:id="lieu" layoutX="127.0" layoutY="286.0" prefHeight="51.0" prefWidth="243.0" text="Label">
          <font>
-            <Font size="35.0" />
+            <Font name="System Bold" size="29.0" />
          </font>
       </Label>
    </children>
+   <effect>
+      <InnerShadow />
+   </effect>
 </AnchorPane>
