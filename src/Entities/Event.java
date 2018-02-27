@@ -6,13 +6,13 @@ import java.util.Date;
 
 
 public class Event {
-    int id_Event , id_user_event;
-    String type_Event,titre_Event,texte_Event,lieu_Event;
+    int id_Event , id_user_event, part;
+    String type_Event,titre_Event,texte_Event,lieu_Event,image;
     
     LocalDate date_Event;
 
    
-    public Event(int id_Event, int id_user_event, String type_Event, String titre_Event, String texte_Event, String lieu_Event, LocalDate date_Event) {
+    public Event(int id_Event, int id_user_event, String type_Event, String titre_Event, String texte_Event, String lieu_Event, LocalDate date_Event,int part,String image) {
         this.id_Event = id_Event;
         this.id_user_event = id_user_event;
         this.type_Event = type_Event;
@@ -20,15 +20,35 @@ public class Event {
         this.texte_Event = texte_Event;
         this.lieu_Event = lieu_Event;
         this.date_Event = date_Event;
-    }
+        this.part=part;
+        this.image=image;
+                }
 
-    public Event(int id_user_event, String type_Event, String titre_Event, String texte_Event, String lieu_Event, LocalDate date_Event) {
+    public Event(int id_user_event, String type_Event, String titre_Event, String texte_Event, String lieu_Event, LocalDate date_Event,int part,String image) {
         this.id_user_event = id_user_event;
         this.type_Event = type_Event;
         this.titre_Event = titre_Event;
         this.texte_Event = texte_Event;
         this.lieu_Event = lieu_Event;
         this.date_Event = date_Event;
+        this.part=part;
+        this.image=image;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public int getPart() {
+        return part;
+    }
+
+    public void setPart(int part) {
+        this.part = part;
     }
 
    
@@ -96,7 +116,7 @@ public class Event {
 
     @Override
     public String toString() {
-        return titre_Event +  "\n" + lieu_Event + "\n" + date_Event ;
+        return titre_Event +  "\n" + lieu_Event + "\n" + date_Event +"\n  Participant:"+part;
     }
 
     
