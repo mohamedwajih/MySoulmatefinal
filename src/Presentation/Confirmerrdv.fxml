@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -34,13 +33,11 @@
             <Image url="file:/C:/wamp64/www/Img/clock.png" />
          </image>
       </ImageView>
-      <TextField fx:id="date" editable="false" layoutX="78.0" layoutY="305.0" prefHeight="25.0" prefWidth="177.0" />
       <ImageView fitHeight="98.0" fitWidth="60.0" layoutX="291.0" layoutY="380.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="file:/C:/wamp64/www/Img/google-pushpin-md.png" />
          </image>
       </ImageView>
-      <TextField fx:id="lieu" editable="false" layoutX="41.0" layoutY="370.0" prefHeight="25.0" prefWidth="245.0" />
       <ImageView fx:id="imagelieu" fitHeight="236.0" fitWidth="358.0" layoutX="42.0" layoutY="417.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="742.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -99,6 +96,16 @@
       <Label layoutX="271.0" layoutY="140.0" text="!" textFill="#b90000">
          <font>
             <Font name="System Bold" size="56.0" />
+         </font>
+      </Label>
+      <Label fx:id="date" layoutX="101.0" layoutY="267.0" prefHeight="43.0" prefWidth="220.0" text="Label">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <Label fx:id="lieu" layoutX="83.0" layoutY="337.0" prefHeight="51.0" prefWidth="243.0" text="Label">
+         <font>
+            <Font size="35.0" />
          </font>
       </Label>
    </children>

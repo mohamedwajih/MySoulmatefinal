@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Iservices;
+package IServices;
 
 import Entities.Event;
 import Entities.Notification;
@@ -19,7 +19,8 @@ public interface INotification {
     public ArrayList<Notification> getListNotifications();
     public ArrayList<Notification> getMYListNotifications(int id_user);
     public ArrayList<Notification> getNotifUnread(int id_user);
-    public void setNotifEtat(ArrayList<Notification> l);
+    public void setNotifEtat(Notification n);
+    public void deleteNotif(int id);
     
   
 }
