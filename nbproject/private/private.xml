@@ -3,26 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/Presentation/AjouterEvennementController.java</file>
-            <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/Services/CommentaireEventService.java</file>
-            <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/Services/SMessage.java</file>
-            <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/Services/EventService.java</file>
-            <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/Presentation/TestPreferenceController.java</file>
-            <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/Services/ParticipationService.java</file>
-            <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/Services/SAmi.java</file>
-            <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/Presentation/AjouterplaceController.java</file>
-            <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/Iservices/INotification.java</file>
-            <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/Services/SRdv.java</file>
-            <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/Presentation/EditArchiveEventController.java</file>
-            <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/Util/PostFile.java</file>
-            <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/Services/NotificationServices.java</file>
-            <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/Presentation/ResultatsTestController.java</file>
-            <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/Services/SPersonnalite.java</file>
-            <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/Presentation/MatchAdminController.java</file>
-            <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/Services/SPreference.java</file>
-            <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/Presentation/EventResponsableController.java</file>
-            <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/Presentation/EventController.java</file>
-            <file>file:/C:/Users/Fatma/Documents/NetBeansProjects/MySoulmatefinal/src/Presentation/NewFXMain.java</file>
+            <file>file:/C:/Users/asus/Documents/GitHub/MySoulmatefinal/src/Presentation/AjouterplaceController.java</file>
+            <file>file:/C:/Users/asus/Documents/GitHub/MySoulmatefinal/src/Presentation/NewFXMain.java</file>
+            <file>file:/C:/Users/asus/Documents/GitHub/MySoulmatefinal/src/Services/SRdv.java</file>
+            <file>file:/C:/Users/asus/Documents/GitHub/MySoulmatefinal/src/Services/SAmi.java</file>
+            <file>file:/C:/Users/asus/Documents/GitHub/MySoulmatefinal/src/Presentation/ConfirmerrdvController.java</file>
         </group>
     </open-files>
 </project-private>

@@ -8,7 +8,7 @@ package Services;
 import DataStorage.Mydb;
 import Entities.CommentaireEvent;
 import Entities.Event;
-import Iservices.ICommentaireEvent;
+import IServices.ICommentaireEvent;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;

@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+<<<<<<< HEAD
 package Iservices;
 
 import Entities.Participation;
@@ -14,5 +15,21 @@ import Entities.Participation;
 public interface Iparticipation {
     public void addParticipation(Participation p) ;
     public void deleteParticipation(Participation p);
+=======
+package IServices;
+
+import Entities.Participation;
+import java.util.ArrayList;
+
+/**
+ *
+ * @author Ste GHRIB-INFO
+ */
+public interface Iparticipation {
+    public void addParticipation(Participation p);
+    public void deleteParticipation(Participation p);
+    public ArrayList<Participation> getParticipations(int id_event);
+   
+>>>>>>> origin/master
     
 }
