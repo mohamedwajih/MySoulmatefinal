@@ -6,7 +6,7 @@
 package Presentation;
 
 
-import FXML.FTTS;
+import Util.FTTS;
 import Entities.Commentaire;
 import Entities.Publication;
 import Entities.Upload;
