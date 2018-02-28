@@ -31,7 +31,7 @@ public class NewFXMain extends Application {
    public void start (Stage stage) throws IOException
 
    {   
-       Parent  root = FXMLLoader.load(getClass().getResource("TestPersonnalite.fxml"));
+       Parent  root = FXMLLoader.load(getClass().getResource("MesMatchs.fxml"));
        Scene scene = new Scene(root);
        stage.setScene(scene);
        stage.show();
