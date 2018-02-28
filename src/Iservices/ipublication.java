@@ -5,7 +5,7 @@
  */
 package Iservices;
 
-import Models.Publication;
+import Entities.Publication;
 import java.util.List;
 
 /**

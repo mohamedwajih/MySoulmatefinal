@@ -6,11 +6,11 @@
 package Presentation;
 
 import FXML.FTTS;
-import Models.Commentaire;
-import Models.Publication;
+import Entities.Commentaire;
+import Entities.Publication;
 import static Presentation.ActualiteController.pp;
-import Service.CommentaireService;
-import Service.PublicationService;
+import Services.CommentaireService;
+import Services.PublicationService;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextArea;
 import java.io.File;

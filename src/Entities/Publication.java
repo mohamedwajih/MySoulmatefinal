@@ -5,7 +5,7 @@
  */
 package Entities;
 
-import DataStorage.MyDB;
+import DataStorage.Mydb;
 import java.sql.Connection;
 import java.sql.Date;
 

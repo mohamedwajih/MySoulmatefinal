@@ -5,9 +5,9 @@
  */
 package Services;
 
-import DataStorage.MyDB;
-import Models.Publication;
-import Models.PublicationLike;
+import DataStorage.Mydb;
+import Entities.Publication;
+import Entities.PublicationLike;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -22,7 +22,7 @@ public class PublicationLikeService {
   Connection cnx;
 
     public PublicationLikeService() {
-        this.cnx=MyDB.getinstance().getConnexion();
+        this.cnx=Mydb.getinstance().getCnx();
     }  
     
     public boolean getUserLike(PublicationLike pl) {

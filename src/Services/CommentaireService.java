@@ -5,10 +5,10 @@
  */
 package Services;
 
-import DataStorage.MyDB;
-import Models.Commentaire;
-import Models.Publication;
-import iServices.icommentaire;
+import DataStorage.Mydb;
+import Entities.Commentaire;
+import Entities.Publication;
+import Iservices.icommentaire;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -30,7 +30,7 @@ public class CommentaireService implements icommentaire{
     Connection cnx;
 
     public CommentaireService() {
-        this.cnx=MyDB.getinstance().getConnexion();
+        this.cnx=Mydb.getinstance().getCnx();
     }
 
     public void ajouterCommentaire(Commentaire c) {

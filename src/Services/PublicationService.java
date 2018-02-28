@@ -5,9 +5,9 @@
  */
 package Services;
 
-import DataStorage.MyDB;
-import Models.Publication;
-import iServices.ipublication;
+import DataStorage.Mydb;
+import Entities.Publication;
+import Iservices.ipublication;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -29,7 +29,7 @@ public class PublicationService implements ipublication {
  Connection cnx;
 
     public PublicationService() {
-        this.cnx=MyDB.getinstance().getConnexion();
+        this.cnx=Mydb.getinstance().getCnx();
     }
     @Override
     public void ajouterPublication(Publication p) {

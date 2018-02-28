@@ -5,8 +5,8 @@
  */
 package Iservices;
 
-import Models.Commentaire;
-import Models.Publication;
+import Entities.Commentaire;
+import Entities.Publication;
 import java.util.List;
 
 /**

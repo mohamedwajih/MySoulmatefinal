@@ -7,10 +7,10 @@ package Presentation;
 
 
 import FXML.FTTS;
-import Models.Commentaire;
-import Models.Publication;
-import Models.Upload;
-import Service.PublicationService;
+import Entities.Commentaire;
+import Entities.Publication;
+import Entities.Upload;
+import Services.PublicationService;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import java.io.File;

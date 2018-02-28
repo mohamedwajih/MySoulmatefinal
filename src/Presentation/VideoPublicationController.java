@@ -5,8 +5,8 @@
  */
 package Presentation;
 
-import Models.Publication;
-import Service.PublicationService;
+import Entities.Publication;
+import Services.PublicationService;
 import com.jfoenix.controls.JFXButton;
 import java.net.URL;
 import java.util.ResourceBundle;
