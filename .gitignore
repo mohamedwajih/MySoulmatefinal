@@ -15,3 +15,5 @@ build/classes/Presentation/NewFXMain.class
 src/Presentation/NewFXMain.java
 nbproject/private/private.properties
 nbproject/project.properties
+*.properties
+*.xml
