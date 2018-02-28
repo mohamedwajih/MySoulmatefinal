@@ -54,10 +54,10 @@ public class SMessage implements IMessage {
             Statement st = cnx.createStatement();
             st.executeUpdate(query);
             System.out.println("new message added");
-            Notification newnotif=new Notification(0, m.getId_dest(),"msg","new message",LocalDate.now());
+           Notification n= new Notification(0,m.getId_dest(),m.getId_emet(),"msg","new msg",LocalDate.now(),"file:/C:/wamp64/www/Img/clock.png");
             NotificationServices ns=new NotificationServices();
            
-            ns.addNotification(newnotif);
+            ns.addNotification(n);
         } catch (SQLException ex) {
             Logger.getLogger(SPlace.class.getName()).log(Level.SEVERE, null, ex);
         }

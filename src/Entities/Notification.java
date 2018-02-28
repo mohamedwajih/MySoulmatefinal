@@ -4,34 +4,50 @@ import java.time.LocalDate;
 import java.util.Date;
 
 public class Notification {
-    int id_notification ,etat,id_user_notif;
-    String type_notification,texte_notification,date_notification2;
+    int id_notification ,etat,id_user_notif,id_origine;
+    String type_notification,texte_notification,image;
     LocalDate date_notification;
 
-    public Notification(int id_notification, int etat, int id_user_notif, String type_notification, String texte_notification, LocalDate date_notification) {
+    public Notification(int etat, int id_user_notif, int id_origine, String type_notification, String texte_notification, LocalDate date_notification,String image) {
+        this.etat = etat;
+        this.id_user_notif = id_user_notif;
+        this.id_origine = id_origine;
+        this.type_notification = type_notification;
+        this.texte_notification = texte_notification;
+        this.date_notification = date_notification;
+        this.image= image;
+    }
+
+    public Notification(int id_notification, int etat, int id_user_notif, int id_origine, String type_notification, String texte_notification, LocalDate date_notification,String image) {
         this.id_notification = id_notification;
         this.etat = etat;
         this.id_user_notif = id_user_notif;
+        this.id_origine = id_origine;
         this.type_notification = type_notification;
         this.texte_notification = texte_notification;
         this.date_notification = date_notification;
+        this.image=image;
     }
 
-    public Notification(int etat, int id_user_notif, String type_notification, String texte_notification, LocalDate date_notification) {
-        this.etat = etat;
-        this.id_user_notif = id_user_notif;
-        this.type_notification = type_notification;
-        this.texte_notification = texte_notification;
-        this.date_notification = date_notification;
+    public int getId_origine() {
+        return id_origine;
     }
 
-    public Notification(int etat, int id_user_notif, String type_notification, String texte_notification, String date_notification2) {
-        this.etat = etat;
-        this.id_user_notif = id_user_notif;
-        this.type_notification = type_notification;
-        this.texte_notification = texte_notification;
-        this.date_notification2 = date_notification2;
+    public void setId_origine(int id_origine) {
+        this.id_origine = id_origine;
     }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    
+
+   
 
     public int getEtat() {
         return etat;
@@ -81,10 +97,6 @@ public class Notification {
         this.type_notification = type_notification;
     }
 
-    public String getDate_notification2() {
-        return date_notification2;
-    }
-
     public void setTexte_notification(String texte_notification) {
         this.texte_notification = texte_notification;
     }
@@ -92,14 +104,10 @@ public class Notification {
     public void setDate_notification(LocalDate date_notification) {
         this.date_notification = date_notification;
     }
-    public void setDate_notification2(String date,int hh,int mm) {
-        this.date_notification2 =date+" "+hh+":"+mm+":00";
-    }
-    
 
     @Override
     public String toString() {
-        return "Notification: \n "+ texte_notification + "\n Date" + date_notification + '}';
+        return "Notification: \n "+ texte_notification + "\n Date" + date_notification ;
     }
 
    

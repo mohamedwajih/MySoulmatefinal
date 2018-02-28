@@ -40,9 +40,10 @@ public class SRdv implements IRdv {
              Statement st=cnx.createStatement();
              st.executeUpdate(query);
              System.out.println("new RDV added");
-             Notification n=new Notification(0, m.getId2(), "rdv", "rdv", m.getDate());
-             NotificationServices ns=new NotificationServices();
-             ns.addNotificationrdv(n);
+             Notification n= new Notification(0,m.getId2(),m.getId1(),"rdv","new rdv",LocalDate.now(),"file:/C:/wamp64/www/Img/clock.png");
+            NotificationServices ns=new NotificationServices();
+           
+            ns.addNotification(n);
              
          } catch (SQLException ex) {
              Logger.getLogger(SPlace.class.getName()).log(Level.SEVERE, null, ex);

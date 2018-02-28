@@ -24,6 +24,7 @@ import javafx.stage.Stage;
  */
 public class NewFXMain extends Application {
     
+<<<<<<< HEAD
 
     public static int idu1=1;
     public static int idu2=2;
@@ -33,6 +34,16 @@ public class NewFXMain extends Application {
    public void start (Stage stage) throws IOException
    {       
        Parent  root = FXMLLoader.load(getClass().getResource("MatchAdmin.fxml"));
+=======
+    public static int idu1=6;
+    public static int idu2;
+    
+   @Override
+   public void start (Stage stage) throws IOException
+
+   {   
+       Parent  root = FXMLLoader.load(getClass().getResource("MesMatchs.fxml"));
+>>>>>>> 3b8c40e3b7ea231f313c2986b954faaeb628b075
        Scene scene = new Scene(root);
        stage.setScene(scene);
        stage.show();
