@@ -492,90 +492,24 @@ VBox vv = new VBox();
     @FXML
     private void commenter(ActionEvent event) throws IOException
     {
-//        pane.setVisible(true);
-//         if (tvpublication.getSelectionModel().getSelectedItem() != null) {
-//        Publication selectedPublication = tvpublication.getSelectionModel().getSelectedItem();
-//             PublicationService sq= new PublicationService();
-//             CommentaireService sc= new CommentaireService();
-//        textepublication.setText(selectedPublication.getContenu_pub());
-//        ObservableList<Commentaire> CommentaireData = FXCollections.observableArrayList();
-//        List<Commentaire> listep= new ArrayList<Commentaire>();
-//       listep=sc.consulterCom(selectedPublication);
-//       CommentaireData.addAll(listep);
-       
-    //   com.setCellValueFactory(new PropertyValueFactory<Commentaire,String>("contenu_com"));
-     //  datecom.setCellValueFactory(new PropertyValueFactory<Commentaire,String>("date_com"));
-       
-      // tvcommentaire.setItems(CommentaireData);
-        
-        // }
+
     }
 
     @FXML
     private void supprimer(ActionEvent event) {
-//   if (tvpublication.getSelectionModel().getSelectedItem() != null) {
-//        Publication selectedPublication = tvpublication.getSelectionModel().getSelectedItem();
-//        PublicationService sq= new PublicationService();
-//        
-//        sq.supprimerPublication(selectedPublication);
-//        System.out.println(" iiii"+selectedPublication);
-//        ObservableList<Publication>PublicationData = FXCollections.observableArrayList();
-//       List<Publication> listeq= new ArrayList<Publication>();
-//       System.out.println("lllll"+listeq);
-//      listeq= sq.consulterPublication();
-//       PublicationData.addAll(listeq);
-//       
-//      // pub.setCellValueFactory(new PropertyValueFactory<Publication,String>("contenu_pub"));
-//    //   date.setCellValueFactory(new PropertyValueFactory<Publication, String>("date_pub"));
-//       
-// //  tvpublication.setItems(PublicationData);
-//    
-//     
     
-//}
+    
+
     }
     private void Modifier(ActionEvent event) {
         
     }
 
     private void ajoutCommentaire(ActionEvent event) {
-//        CommentaireService sc= new CommentaireService();
-//        Commentaire comm= new Commentaire();
-//        comm.setContenu_com(commentaire.getText());
-//        Publication selectedPublication = tvpublication.getSelectionModel().getSelectedItem();
-//        comm.setId_pub(selectedPublication.getId_pub());
-//        System.out.println(comm);
-//        sc.ajouterCommentaire(comm);
-//        ObservableList<Commentaire> CommentaireData = FXCollections.observableArrayList();
-//        List<Commentaire> listep= new ArrayList<Commentaire>();
-//       listep=sc.consulterCom(selectedPublication);
-//       CommentaireData.addAll(listep);
-//       
-//     //  com.setCellValueFactory(new PropertyValueFactory<Commentaire,String>("contenu_com"));
-//     //  datecom.setCellValueFactory(new PropertyValueFactory<Commentaire,String>("date_com"));
-//       
-      // tvcommentaire.setItems(CommentaireData);
         
     }
     private void supcom(ActionEvent event) {
-//        if (tvcommentaire.getSelectionModel().getSelectedItem() != null) {
-//        Commentaire selectedCommentaire = tvcommentaire.getSelectionModel().getSelectedItem();
-//        CommentaireService sq1= new CommentaireService();
-//        
-//        sq1.supprimerCommentaire(selectedCommentaire);
-//            System.out.println("commm  "+selectedCommentaire);
-//        ObservableList<Commentaire>CommentaireData = FXCollections.observableArrayList();
-//       List<Commentaire> listeq1= new ArrayList<Commentaire>();
-//             System.out.println("hhhhhh"+listeq1);
-//      listeq1= sq1.consulterCommentaireTest();
-//       CommentaireData.addAll(listeq1);
-//       
-//      // com.setCellValueFactory(new PropertyValueFactory<Commentaire,String>("contenu_com"));
-//      // datecom.setCellValueFactory(new PropertyValueFactory<Commentaire, String>("date_com"));
-//       
-//   tvcommentaire.setItems(CommentaireData);
 
-  //  }
 }
 
     @FXML
