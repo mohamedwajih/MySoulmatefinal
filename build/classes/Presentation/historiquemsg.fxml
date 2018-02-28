@@ -10,15 +10,12 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="479.0" prefWidth="708.0" styleClass="questions" stylesheets="file:/C:/wamp64/www/Img/stylesheet.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.HistoriquemsgController">
+<AnchorPane id="AnchorPane" prefHeight="479.0" prefWidth="708.0" styleClass="historique" stylesheets="file:/C:/wamp64/www/Img/stylesheet.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.HistoriquemsgController">
    <children>
-      <Label layoutX="75.0" layoutY="-7.0" text="Historique des Messages" textFill="#e13286">
+      <Label layoutX="75.0" layoutY="-7.0" text="Historique des Messages" textFill="WHITE">
          <font>
             <Font name="Jellyka - Love and Passion" size="42.0" />
          </font>
-         <effect>
-            <InnerShadow />
-         </effect>
       </Label>
       <ScrollPane layoutX="75.0" layoutY="110.0" prefHeight="312.0" prefWidth="558.0" style="-fx-background-color: pink;">
          <content>

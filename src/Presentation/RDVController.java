@@ -37,11 +37,6 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import javafx.scene.control.DateCell;
 import javafx.scene.control.Tooltip;
-import static javafx.scene.paint.Color.color;
-import static javafx.scene.paint.Color.color;
-import static javafx.scene.paint.Color.color;
-import static javafx.scene.paint.Color.color;
-import javafx.scene.text.Font;
 
 /**
  * FXML Controller class
@@ -133,11 +128,6 @@ public class RDVController implements Initializable {
                          
                         if(t != null){
                             setText(t.getLibelle());
-                            setFont(Font.font(17));
-                            if(t.getType().compareTo(theme.getText())==0){
-                                setTextFill(color(0.0, 1.0, 0.0));
-                                
-                            }
                            
                         }else{ 
                             setText("Choisissez le lieu de Rendez_vous !");

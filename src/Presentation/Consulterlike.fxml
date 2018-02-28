@@ -25,7 +25,7 @@
          <image>
             <Image url="file:/C:/wamp64/www/Img/user_logo.png" />
          </image></ImageView>
-      <Label fx:id="username" alignment="CENTER" contentDisplay="CENTER" layoutX="75.0" layoutY="386.0" prefHeight="172.0" prefWidth="413.0" styleClass="title" text="nom" textAlignment="CENTER" />
+      <Label fx:id="username" alignment="CENTER" contentDisplay="CENTER" layoutX="58.0" layoutY="382.0" prefHeight="172.0" prefWidth="413.0" styleClass="title" text="nom" textAlignment="CENTER" />
       <Label fx:id="age" alignment="CENTER" layoutX="544.0" layoutY="374.0" prefHeight="35.0" prefWidth="165.0" text="age">
          <font>
             <Font name="Blackadder ITC" size="28.0" />
@@ -50,7 +50,7 @@
             <InnerShadow />
          </effect>
       </ImageView>
-      <Label fx:id="comp" layoutX="254.0" layoutY="566.0" prefHeight="42.0" prefWidth="71.0" text="Label">
+      <Label fx:id="comp" layoutX="229.0" layoutY="568.0" prefHeight="42.0" prefWidth="71.0" text="Label">
          <font>
             <Font name="Blackadder ITC" size="26.0" />
          </font></Label>

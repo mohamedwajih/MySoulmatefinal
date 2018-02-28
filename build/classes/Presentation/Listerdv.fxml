@@ -24,21 +24,18 @@
          <image>
             <Image url="file:/C:/wamp64/www/Img/user_logo.png" />
          </image></ImageView>
-      <Label fx:id="nom" layoutX="177.0" layoutY="397.0" prefHeight="35.0" prefWidth="126.0" text="nom">
+      <Label fx:id="nom" layoutX="239.0" layoutY="399.0" prefHeight="35.0" prefWidth="126.0" text="nom">
          <font>
             <Font size="27.0" />
          </font></Label>
-      <Label fx:id="age" layoutX="173.0" layoutY="443.0" prefHeight="41.0" prefWidth="98.0" styleClass="simplelabel" text="age">
-         <font>
-            <Font size="25.0" />
-         </font></Label>
+      <Label fx:id="age" layoutX="318.0" layoutY="339.0" prefHeight="41.0" prefWidth="98.0" styleClass="simplelabel" text="age" />
       <ImageView fitHeight="27.0" fitWidth="119.0" layoutX="89.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="file:/C:/wamp64/www/Img/soulmate.png" />
          </image>
       </ImageView>
-      <Label fx:id="date" layoutX="717.0" layoutY="414.0" prefHeight="44.0" prefWidth="285.0" styleClass="simplelabel" text="Date" />
-      <Label fx:id="place" layoutX="718.0" layoutY="370.0" prefHeight="55.0" prefWidth="285.0" styleClass="simplelabel" text="Lieu" />
+      <Label fx:id="date" layoutX="609.0" layoutY="454.0" prefHeight="44.0" prefWidth="285.0" styleClass="simplelabel" text="Label" />
+      <Label fx:id="place" layoutX="612.0" layoutY="329.0" prefHeight="55.0" prefWidth="285.0" styleClass="simplelabel" text="Label" />
       <ImageView fitHeight="81.0" fitWidth="94.0" layoutX="621.0" layoutY="376.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="file:/C:/wamp64/www/Img/clock.png" />
@@ -61,12 +58,12 @@
             <Image url="file:/C:/wamp64/www/Img/pushpin-147918_960_720.png" />
          </image>
       </ImageView>
-      <Label fx:id="prenom" layoutX="196.0" layoutY="350.0" text="Prenom">
+      <Label fx:id="prenom" layoutX="150.0" layoutY="401.0" text="Prenom">
          <font>
             <Font size="25.0" />
          </font>
       </Label>
-      <ImageView fitHeight="41.0" fitWidth="47.0" layoutX="149.0" layoutY="498.0">
+      <ImageView fitHeight="41.0" fitWidth="47.0" layoutX="129.0" layoutY="456.0">
          <image>
             <Image url="file:/C:/wamp64/www/Img/home.png" />
          </image>
@@ -81,7 +78,7 @@
             <Image url="file:/C:/wamp64/www/Img/droite.png" />
          </image>
       </ImageView>
-      <Label fx:id="adresse" layoutX="200.0" layoutY="497.0" prefHeight="43.0" prefWidth="205.0" text="Label">
+      <Label fx:id="adresse" layoutX="183.0" layoutY="453.0" prefHeight="43.0" prefWidth="205.0" text="Label">
          <font>
             <Font size="29.0" />
          </font>

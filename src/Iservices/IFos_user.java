@@ -46,6 +46,7 @@ public interface IFos_user {
         public boolean verifier_email(String login);
            public void validerCompte(String code);
   public void modifierImage(String image,int id);
+   public Fos_user getUserById(int id);
   
 
 }
