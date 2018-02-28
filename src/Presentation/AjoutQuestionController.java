@@ -62,7 +62,11 @@ public class AjoutQuestionController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+<<<<<<< HEAD
+System.out.println("");
+=======
 
+>>>>>>> 3b8c40e3b7ea231f313c2986b954faaeb628b075
     }    
 
     @FXML

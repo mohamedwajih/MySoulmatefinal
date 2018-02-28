@@ -51,7 +51,11 @@ import javafx.scene.control.Label;
  */
 public class MatchAdminController implements Initializable {
 
+<<<<<<< HEAD
+    SUser su= new SUser();
+=======
     Fos_userServices su= new Fos_userServices();
+>>>>>>> 3b8c40e3b7ea231f313c2986b954faaeb628b075
     SMatching sm= new SMatching(); 
     
     @FXML
