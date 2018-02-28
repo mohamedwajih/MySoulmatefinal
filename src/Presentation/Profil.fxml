@@ -19,12 +19,12 @@
                   <Font size="16.0" />
                </font>
             </TextField>
-            <ImageView fitHeight="46.0" fitWidth="58.0" layoutX="669.0" layoutY="13.0" onMouseClicked="#listermsg" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="37.0" fitWidth="49.0" layoutX="669.0" layoutY="16.0" onMouseClicked="#listermsg" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="file:/C:/wamp64/www/Img/jweb.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="59.0" fitWidth="58.0" layoutX="757.0" layoutY="2.0" onMouseClicked="#match" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="46.0" fitWidth="49.0" layoutX="754.0" layoutY="9.0" onMouseClicked="#match" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="file:/C:/wamp64/www/Img/rdv.png" />
                </image>
