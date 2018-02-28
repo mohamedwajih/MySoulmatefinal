@@ -7,6 +7,9 @@ package Presentation;
 
 import Entities.Event;
 import Entities.Notification;
+import static Presentation.EditEventController.image;
+import static Presentation.EditEventController.n;
+import static Presentation.EditEventController.stage;
 import Services.EventService;
 import Services.NotificationServices;
 import com.lynden.gmapsfx.GoogleMapView;
@@ -20,17 +23,31 @@ import com.lynden.gmapsfx.javascript.object.MarkerOptions;
 import com.lynden.gmapsfx.service.geocoding.GeocoderStatus;
 import com.lynden.gmapsfx.service.geocoding.GeocodingResult;
 import com.lynden.gmapsfx.service.geocoding.GeocodingService;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -40,9 +57,13 @@ import javafx.scene.control.DateCell;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+import javax.imageio.ImageIO;
+import javax.net.ssl.HttpsURLConnection;
 
 /**
  * FXML Controller class
@@ -70,6 +91,28 @@ public class EditArchiveEventController implements Initializable ,MapComponentIn
     LatLong latLong;
     private GeocodingService geocodingService;
     private GoogleMap map;
+    @FXML
+    private Button editIm;
+    
+    
+     File file;
+      Event e1 ;
+      
+      
+       Random rd = new Random(); 
+    public   static int n ; 
+    final FileChooser fileChooser = new FileChooser();
+    final   File fileSave = new File("C:\\wamp\\www\\mysoulmate\\photo\\");
+    static Image image ; 
+    public  static Stage stage ;
+    public  String nomFichier ; 
+    
+    public static Stage getStage() 
+    {
+        return stage;
+    }
+    @FXML
+    private Button retour;
 
     
     public void setIdE(int id_event) {
@@ -82,6 +125,8 @@ public class EditArchiveEventController implements Initializable ,MapComponentIn
       lieu.setText(e.getLieu_Event());
       text.setText(e.getTexte_Event());
       type.setValue(e.getType_Event());
+      Image photo =new Image(e.getImage());
+      Image.setImage(photo);
         ArrayList<String> EventT= es.getListTypeEvents();
       for(int i=0 ;i<EventT.size();i++){
           type.getItems().add(EventT.get(i));
@@ -111,32 +156,67 @@ public class EditArchiveEventController implements Initializable ,MapComponentIn
 
     @FXML
     private void editEvent(ActionEvent event) {
+        
+          n=rd.nextInt(10000)+1;
          try {
            
-            Event e = new Event();
+            e1 = new Event();
             EventService es = new EventService();
            
+          
+            if ( nomFichier== null || nomFichier.length() == 0) 
+        {   Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Champs Invalides");
+            alert.setHeaderText("Veuillez remplir les champs");
+            alert.setContentText("Ajoutez un photo !!");
+            alert.showAndWait();
+
+             
+        }
+        else{
             
-            e.setId_user_event(es.getEventArchiv(id).getId_user_event());
-            e.setType_Event(type.getValue());
-            e.setTitre_Event(titre.getText());
-            e.setTexte_Event(text.getText());
-            e.setLieu_Event(lieu.getText());
-             e.setDate_Event(date.getValue());
-            e.setPart(0);
-            e.setImage("css/Background.png");
-            System.out.println(e);
-            es.addEvent(e);
+            e1.setId_user_event(es.getEventArchiv(id).getId_user_event());
+            e1.setType_Event(type.getValue());
+            e1.setTitre_Event(titre.getText());
+            e1.setTexte_Event(text.getText());
+            e1.setLieu_Event(lieu.getText());
+            e1.setDate_Event(date.getValue());
+            e1.setPart(0);
+            e1.setImage("http://localhost/mysoulmate/photo/"+nomFichier+n+".png");
+            }
+            es.addEvent(e1);
             es.deletEventArchive(es.getEventArchiv(id));
            
-            ArrayList<Integer> liC=es.getIdUserCibleEvent(e);
+            ArrayList<Integer> liC=es.getIdUserCibleEvent(e1);
            int id;
-           id= es.getIdEvent(e);
+           id= es.getIdEvent(e1);
             for(int i=0;i<liC.size();i++){
             NotificationServices ns =new NotificationServices();
-            Notification n=new Notification(0,liC.get(i),id,"event",e.getTitre_Event(),LocalDate.now(),e.getImage());
+            Notification n=new Notification(0,liC.get(i),id,"event",e1.getTitre_Event(),LocalDate.now(),e1.getImage());
             ns.addNotification(n);
             }
+              try 
+                { 
+                        File nomfichier = new File("C:/wamp/www/mysoulmate/photo/" + nomFichier+n + ".png");
+                        ImageIO.write(SwingFXUtils.fromFXImage(Image.getImage(),null), "png", nomfichier);
+                        insertionBase(nomFichier+n);
+                }
+                catch (URISyntaxException ex) 
+                {
+                        Logger.getLogger(EditArchiveEventController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                catch (MalformedURLException ex) 
+                {
+                        Logger.getLogger(EditArchiveEventController.class.getName()).log(Level.SEVERE, null, ex);
+                   
+        
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Atualité ajoutée");
+            alert.setHeaderText("Atualité ajoutée avec succès");
+            alert.setContentText("Atualité "+titre.getText()+" ajout avec succès");
+            alert.showAndWait();
+            close(event);
+          } 
            
            
             System.out.println(es.getEvent(id));
@@ -151,10 +231,24 @@ public class EditArchiveEventController implements Initializable ,MapComponentIn
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (IOException ex) {
-            Logger.getLogger(EditEventController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(EditArchiveEventController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
+    private void close(ActionEvent event) throws IOException
+    {
+    
+    Parent homePage = FXMLLoader.load(getClass().getResource(""));
+
+        Scene homePage_scene = new Scene(homePage);
+
+        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        app_stage.setScene(homePage_scene);
+
+        app_stage.show();
+    
+    }
       @FXML
     private void addressTextFieldAction(ActionEvent event) {
         
@@ -241,6 +335,163 @@ public class EditArchiveEventController implements Initializable ,MapComponentIn
 
         });    
     }
+    
+      @FXML
+    private void modim(ActionEvent event) {
+         setExtFilters(fileChooser);
+                File file = fileChooser.showOpenDialog(stage);
+                if (file != null) 
+                {
+                  //url.setText(file.getAbsolutePath());
+                  image = new Image(file.toURI().toString());
+        Image.setFitHeight(200);
+        Image.setPreserveRatio(true);
+        Image.setImage(image);
+        Image.setSmooth(true);
+        Image.setCache(true);
+                    nomFichier = file.getName().substring(0,file.getName().indexOf(".")).replaceAll("\\s+"," ");
+          System.out.println(nomFichier);
+                }
+    }
+      public void insertionBase(String nomFile)throws URISyntaxException, MalformedURLException, IOException 
+            {
+                EditArchiveEventController.URLBuilder urlb = new EditArchiveEventController.URLBuilder("localhost");
+                urlb.setConnectionType("http");
+                urlb.addSubfolder("mysoulmate");
+                urlb.addSubfolder("uploadimage.PHP");
+                urlb.addParameter("image","http://localhost/mysoulmate/photo/"+nomFile+".png");
+                urlb.addParameter("titre",e1.getId_Event()+"");
+        
+                String url = urlb.getURL();
+              
+                System.out.println(url);
+        
+        URL URl_Serveur = new URL(url);
+                HttpURLConnection conx = (HttpURLConnection) URl_Serveur.openConnection();
+                conx.setRequestMethod("POST");
+                conx.setDoOutput(true);
+                OutputStream os = conx.getOutputStream();
+                BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(os));
+
+ 
+      writer.flush();
+                writer.close();
+                conx.connect();
+
+
+                int reponse = conx.getResponseCode();
+
+                if (reponse == HttpsURLConnection.HTTP_OK) 
+                {
+                    InputStream is = conx.getInputStream();
+
+                    BufferedReader br = new BufferedReader(new InputStreamReader(is));
+
+                    String ligne = "", resultat = "";
+
+                    while ((ligne = br.readLine()) != null) 
+                    {
+
+                        resultat += ligne;
+                    }
+
+    }
+}  
+    
+    private void setExtFilters(FileChooser chooser) 
+    {
+        chooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("All Images", "*.*"),
+                new FileChooser.ExtensionFilter("PNG", "*.png")
+        );
+    }
+
+
+    @FXML
+    private void editIm(ActionEvent event) {
+         setExtFilters(fileChooser);
+                File file = fileChooser.showOpenDialog(stage);
+                if (file != null) 
+                {
+                  //url.setText(file.getAbsolutePath());
+                  image = new Image(file.toURI().toString());
+        Image.setFitHeight(200);
+        Image.setPreserveRatio(true);
+        Image.setImage(image);
+        Image.setSmooth(true);
+        Image.setCache(true);
+                    nomFichier = file.getName().substring(0,file.getName().indexOf(".")).replaceAll("\\s+"," ");
+          System.out.println(nomFichier);
+                }
+    }
+
+    @FXML
+    private void retourA(ActionEvent event) {
+        try {
+            Stage stage = (Stage)retour.getScene().getWindow();
+            stage.close();
+            
+            Parent root = FXMLLoader.load(getClass().getResource("Archve.fxml"));
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add("css/stylesheet1.css");
+            Stage   primaryStage = new Stage();
+            primaryStage.setTitle("Event");
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(EditArchiveEventController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+      class URLBuilder 
+    {
+    private StringBuilder folders, params;
+    private String connType, host;
+
+    void setConnectionType(String conn) 
+    {
+        connType = conn;
+    }
+
+    URLBuilder()
+    {
+        folders = new StringBuilder();
+        params = new StringBuilder();
+    }
+
+    URLBuilder(String host) 
+    {
+        this();
+        this.host = host;
+    }
+
+    void addSubfolder(String folder) 
+    {
+        folders.append("/");
+        folders.append(folder);
+    }
+
+    void addParameter(String parameter, String value)
+    {
+        if(params.toString().length() > 0){params.append("&");}
+        params.append(parameter);
+        params.append("=");
+        params.append(value);
+    }
+
+    String getURL() throws URISyntaxException, MalformedURLException
+    {
+        URI uri = new URI(connType, host, folders.toString(),
+                params.toString(), null);
+        return uri.toURL().toString();
+    }
+
+    String getRelativeURL() throws URISyntaxException, MalformedURLException
+    {
+        URI uri = new URI(null, null, folders.toString(), params.toString(), null);
+        return uri.toString();
+    }
+    }
+    
     
     
 }

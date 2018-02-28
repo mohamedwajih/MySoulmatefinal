@@ -4,7 +4,7 @@ package Services;
 import DataStorage.Mydb;
 import Entities.Event;
 import Entities.Notification;
-import Iservices.INotification;
+import IServices.INotification;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,7 +17,7 @@ import java.util.Date;
 public class NotificationServices implements INotification {
  Connection connexion;
     public NotificationServices(){
-          connexion =Mydb.getinstance().getCnx();
+          connexion = Mydb.getinstance().getCnx();
     }
     @Override
     public void addNotification(Notification n) {

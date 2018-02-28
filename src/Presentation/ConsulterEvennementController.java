@@ -1,4 +1,4 @@
-/*
+          /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -169,6 +169,23 @@ public class ConsulterEvennementController implements Initializable {
         
         
          String champsrecherche = recherche.getText();
+         if(champsrecherche== null || champsrecherche.length() == 0 ){
+           try {
+                Stage stage = (Stage) recherche.getScene().getWindow();
+            stage.close();
+            Stage st = new Stage();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ConsulterEvennement.fxml"));
+            Parent root1 = (Parent) loader.load();
+            st.setTitle("Evennements Passés");
+            Scene scene1 = new Scene(root1);
+            scene1.getStylesheets().add("css/stylesheet1.css");
+            st.setScene(scene1);
+            
+            st.show();
+        } catch (IOException ex) {
+            Logger.getLogger(ConsulterEvennementController.class.getName()).log(Level.SEVERE, null, ex);
+        }}
+         else{
           ObservableList<Event> eventlist = FXCollections.observableArrayList();
         EventService es = new EventService();
          List<Event> listE = new ArrayList<Event>();
@@ -199,6 +216,7 @@ public class ConsulterEvennementController implements Initializable {
             }
         });
         
+    }
     }
     
     

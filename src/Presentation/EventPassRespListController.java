@@ -17,12 +17,14 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
@@ -40,6 +42,8 @@ public class EventPassRespListController implements Initializable {
     private ListView<Event> listEvent;
 
     Image IMAGE_TWITTER ;
+    @FXML
+    private Button retour;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
          EventService es = new EventService();
@@ -99,6 +103,24 @@ public class EventPassRespListController implements Initializable {
             }
         }
     });    
+    }
+
+    @FXML
+    private void retourA(ActionEvent event) {
+        
+         try {
+            Stage stage = (Stage)retour.getScene().getWindow();
+            stage.close();
+            Parent root = FXMLLoader.load(getClass().getResource("ConsulteListEventRespnsable.fxml"));
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add("css/stylesheet1.css");
+            Stage   primaryStage = new Stage();
+            primaryStage.setTitle("Event");
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(EventArchveController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 }
