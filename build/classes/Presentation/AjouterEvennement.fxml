@@ -32,10 +32,9 @@
             </GoogleMapView>
     </children>
       </Pane>
-      <ImageView fx:id="imageV" fitHeight="134.0" fitWidth="446.0" layoutX="320.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="addImage" layoutX="377.0" layoutY="188.0" mnemonicParsing="false" onAction="#AddImage" text="Ajouter image " />
+      <ImageView fx:id="image" fitHeight="134.0" fitWidth="446.0" layoutX="320.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="addImage" layoutX="486.0" layoutY="188.0" mnemonicParsing="false" onAction="#AddImage" text="Ajouter image " />
       <Label layoutX="22.0" layoutY="380.0" text="Lieu" />
-      <Label fx:id="url" layoutX="529.0" layoutY="192.0" text="Label" visible="false" />
       
     
 

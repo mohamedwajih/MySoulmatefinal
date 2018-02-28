@@ -7,7 +7,7 @@ package Services;
 
 import DataStorage.Mydb;
 import Entities.Participation;
-import Iservices.Iparticipation;
+import IServices.Iparticipation;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
