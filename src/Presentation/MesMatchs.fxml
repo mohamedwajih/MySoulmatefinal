@@ -88,10 +88,13 @@
             <DropShadow />
          </effect>
       </ImageView>
-      <ImageView fx:id="like" fitHeight="128.0" fitWidth="91.0" layoutX="130.0" layoutY="468.0" onMouseClicked="#liker" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="like" fitHeight="145.0" fitWidth="165.0" layoutX="130.0" layoutY="431.0" onMouseClicked="#liker" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="file:/C:/wamp64/www/Img/poucegris.png" />
          </image>
+         <effect>
+            <InnerShadow />
+         </effect>
       </ImageView>
    </children>
    <effect>

@@ -31,7 +31,7 @@ import com.lynden.gmapsfx.service.geocoding.GeocoderStatus;
 import com.lynden.gmapsfx.service.geocoding.GeocodingResult;
 import com.lynden.gmapsfx.service.geocoding.GeocodingService;
 import java.io.File;
-import Utils.PostFile;
+import Util.PostFile;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.time.LocalDate;
