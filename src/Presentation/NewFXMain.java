@@ -23,15 +23,18 @@ import javafx.stage.Stage;
  * @author asus
  */
 public class NewFXMain extends Application {
+ 
+    public static int idu1=1;
+    public static int idu2=2;
+
     
-    public static int idu1=6;
-    public static int idu2;
-    
+   
    @Override
    public void start (Stage stage) throws IOException
 
    {   
        Parent  root = FXMLLoader.load(getClass().getResource("MesMatchs.fxml"));
+
        Scene scene = new Scene(root);
        stage.setScene(scene);
        stage.show();

@@ -24,7 +24,7 @@
          <image>
             <Image url="file:/C:/wamp64/www/Img/user_logo.png" />
          </image></ImageView>
-      <Label fx:id="nom" layoutX="239.0" layoutY="399.0" prefHeight="35.0" prefWidth="126.0" text="nom">
+      <Label fx:id="nom" layoutX="239.0" layoutY="441.0" prefHeight="35.0" prefWidth="126.0" text="nom">
          <font>
             <Font size="27.0" />
          </font></Label>
@@ -63,7 +63,7 @@
             <Font size="25.0" />
          </font>
       </Label>
-      <ImageView fitHeight="41.0" fitWidth="47.0" layoutX="129.0" layoutY="456.0">
+      <ImageView fitHeight="41.0" fitWidth="47.0" layoutX="129.0" layoutY="496.0">
          <image>
             <Image url="file:/C:/wamp64/www/Img/home.png" />
          </image>
@@ -78,7 +78,7 @@
             <Image url="file:/C:/wamp64/www/Img/droite.png" />
          </image>
       </ImageView>
-      <Label fx:id="adresse" layoutX="183.0" layoutY="453.0" prefHeight="43.0" prefWidth="205.0" text="Label">
+      <Label fx:id="adresse" layoutX="183.0" layoutY="491.0" prefHeight="43.0" prefWidth="205.0" text="Label">
          <font>
             <Font size="29.0" />
          </font>

@@ -1,5 +1,7 @@
 
 *.xml
+<<<<<<< HEAD
+=======
 nbproject/private/private.xml
 nbproject/private/private.properties
 MySoulmateFinal/build/built-jar.properties
@@ -15,3 +17,9 @@ build/classes/Presentation/NewFXMain.class
 src/Presentation/NewFXMain.java
 nbproject/private/private.properties
 nbproject/project.properties
+<<<<<<< HEAD
+*.properties
+*.xml
+=======
+>>>>>>> 3b8c40e3b7ea231f313c2986b954faaeb628b075
+>>>>>>> 1ce25081b9f1d8156859da09ed220861f8b19d87
