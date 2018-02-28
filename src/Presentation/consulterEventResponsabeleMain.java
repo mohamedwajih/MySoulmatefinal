@@ -21,8 +21,7 @@ public class consulterEventResponsabeleMain  extends Application{
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("ConsulteListEventRespnsable.fxml"));
-        Scene scene = new Scene(root);
-        scene.getStylesheets().add("css/stylesheet1.css");
+        Scene scene = new Scene(root);     
         primaryStage.setTitle("Mes evenements");
         primaryStage.setScene(scene);
         primaryStage.show();
