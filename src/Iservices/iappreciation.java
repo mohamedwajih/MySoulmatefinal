@@ -5,7 +5,7 @@
  */
 package Iservices;
 
-import Models.Appreciation;
+import Entities.Appreciation;
 import java.util.ArrayList;
 import java.util.List;
 

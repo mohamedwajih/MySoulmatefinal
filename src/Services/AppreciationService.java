@@ -5,9 +5,9 @@
  */
 package Services;
 
-import DataStorage.MyDB;
-import Models.Appreciation;
-import iServices.iappreciation;
+import DataStorage.Mydb;
+import Entities.Appreciation;
+import Iservices.iappreciation;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -24,7 +24,7 @@ public class AppreciationService implements iappreciation{
     Connection cnx;
 
     public AppreciationService() {
-        this.cnx=MyDB.getinstance().getConnexion();
+        this.cnx=Mydb.getinstance().getCnx();
     }
 
     @Override

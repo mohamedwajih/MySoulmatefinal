@@ -55,7 +55,7 @@ public class CommentaireService implements icommentaire{
     public void supprimerCommentaire(Commentaire c) {
         try {           
       
-             String query = "DELETE  FROM commentaire where id_com = '"+c.getId_com()+"'";
+             String query = "DELETE  FROM commentaire where id = '"+c.getId_com()+"'";
 
       PreparedStatement preparedStmt = cnx.prepareStatement(query);
       preparedStmt.executeUpdate();
@@ -77,7 +77,7 @@ public class CommentaireService implements icommentaire{
           Date d =new Date();
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd/hh-mm");
         String s = df.format(d);
-            String requete3= "UPDATE commentaire SET contenu_com='"+c.getContenu_com()+"' WHERE id_com='"+c.getId_com()+"'";
+            String requete3= "UPDATE commentaire SET contenu_com='"+c.getContenu_com()+"' WHERE id='"+c.getId_com()+"'";
             
             Statement st3=cnx.createStatement();
             st3.executeUpdate(requete3);
@@ -92,21 +92,21 @@ public class CommentaireService implements icommentaire{
     
 
     
-    public List<Commentaire> consulterComCom(Commentaire c) {
+    public List<Commentaire> consulterComCom(int idpub) {
         
              ArrayList<Commentaire> listN = new ArrayList<Commentaire>();
   try {
-            String query = "SELECT * from commentaire WHERE id_pub='"+c.getId_pub()+"'";
+            String query = "SELECT * from commentaire WHERE id_pub="+idpub;
             Statement stm= cnx.createStatement();
             ResultSet rs = stm.executeQuery(query);
              while(rs.next())
             {
-                    int id_pub=rs.getInt("id_pub");
-                 int id_com=rs.getInt("id_com");
+                //    int id_pub=rs.getInt("id_pub");
+                 int id_com=rs.getInt("id");
                  String contenu_com=rs.getString("contenu_com");
                  String date_com=rs.getString("date_com");
               
-                listN.add(new Commentaire(id_pub,id_com,contenu_com,date_com));
+                listN.add(new Commentaire(id_com,contenu_com,date_com));
               
             }
              
@@ -128,7 +128,7 @@ public class CommentaireService implements icommentaire{
              while(rs.next())
             {
            
-                 int id_com=rs.getInt("id_com");
+                 int id_com=rs.getInt("id");
                  String contenu_com=rs.getString("contenu_com");
                  String date_com=rs.getString("date_com");
                 
@@ -169,7 +169,11 @@ public class CommentaireService implements icommentaire{
     return listN;
     }
 
-    
+    @Override
+    public List<Commentaire> consulterComCom(Commentaire c) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
   
     
 
