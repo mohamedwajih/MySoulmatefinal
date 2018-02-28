@@ -9,7 +9,9 @@ package Presentation;
 import Util.FTTS;
 import Entities.Commentaire;
 import Entities.Publication;
+import Entities.PublicationLike;
 import Entities.Upload;
+import Services.PublicationLikeService;
 import Services.PublicationService;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
@@ -57,8 +59,10 @@ import tray.notification.TrayNotification;
  *
  * @author feriel
  */
-public class ActualiteController implements Initializable {
 
+public class ActualiteController implements Initializable {
+ private final Image likebutton = new Image("/images/like.png");
+  ImageView imageviewlike = new ImageView(likebutton);
      @FXML
     private TextArea tfpub;
 @FXML
@@ -79,7 +83,7 @@ public class ActualiteController implements Initializable {
     private Button supprimer;
   private File file;
    String vid;
- static  int idpub ;
+
     private TableView<Commentaire> tvcommentaire;
 
     @FXML
@@ -89,7 +93,8 @@ public class ActualiteController implements Initializable {
     @FXML
     private ScrollPane scrollPanePublication;
     static int recupid;                                                                    
-                                                                 
+     int iduser;
+     int idpub;
 
 @FXML
     private AnchorPane anchorPaneA;
@@ -111,6 +116,11 @@ private FileChooser.ExtensionFilter extFilterJPG;
      private Upload up;
       private File file1 = new File("");
 
+      public ActualiteController()
+      {
+      iduser=2;
+      }
+      
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         ObservableList<Publication> PublicationData = FXCollections.observableArrayList();
@@ -165,7 +175,7 @@ visit.setOnMouseEntered(event -> {
                 
                         root.getChildren().add(im);
                          root.setAccessibleText(Integer.valueOf(data.get(k).getId_pub()).toString());
-
+//css for design
                         l.setStyle("-fx-font-size: 20px;"
                                 + " -fx-font-weight: bold;"
                                 + "-fx-text-fill: #818181;"
@@ -209,38 +219,48 @@ VBox vv = new VBox();
           v1.setSpacing(5);
           
                   Label l = new Label("");
+                  
+                        PublicationLikeService publikeservice=new PublicationLikeService();
+                        int nblike=publikeservice.getNumberLike(data.get(k).getId_pub());
            Label l1 = new Label("");
-           Label contenue = new Label("Publication ");
-          contenue.setStyle("-fx-text-fill: #c4160e;-fx-font-weight: bold; -fx-font: 15px Tahoma;");
+          // l.setText(Integer.toString(nblike));
+            Label l3 = new Label("");
+           Label contenue = new Label("Publication: ");
+          contenue.setStyle("-fx-text-fill: #7f171f;-fx-font-weight: bold; -fx-font: 20px Tahoma;");
               Label contenupub = new Label(data.get(k).getContenu_pub());
-                 contenupub.setStyle("-fx-text-fill:  #c4160e;-fx-font-weight: bold; -fx-font: 15px Tahoma;");
+                 contenupub.setStyle("-fx-text-fill:  #27313a;-fx-font-weight: bold; -fx-font: 20px Tahoma;");
             
                  
              
-                       Label datePublication = new Label("Date ");
-                     datePublication.setStyle("-fx-text-fill: #c4160e;-fx-font-weight: bold; -fx-font: 15px Tahoma;");
+                       Label datePublication = new Label("Date: ");
+                     datePublication.setStyle("-fx-text-fill: #7f171f;-fx-font-weight: bold; -fx-font: 20px Tahoma;");
                    Label datePublicationPub = new Label(data.get(k).getDate_pub());
-                      datePublicationPub.setStyle("-fx-text-fill:  #c4160e;-fx-font-weight: bold; -fx-font: 15px Tahoma;");
+                      datePublicationPub.setStyle("-fx-text-fill:  #27313a;-fx-font-weight: bold; -fx-font: 20px Tahoma;");
                        
                          
                
                  JFXButton supprimer = new JFXButton();
                         
                               supprimer.setText("Supprimer ");
-                supprimer.setStyle("-fx-text-fill: hite;-fx-font: 11 'system'; -fx-background-radius: 5px; -padding-left: 40px;-fx-background-color:#c49e56;");
+                supprimer.setStyle("-fx-text-fill: hite;-fx-font: 11 'system'; -fx-background-radius: 5px; -padding-left: 50px;-fx-background-color:#c49e56;");
                 supprimer.prefWidth(80);
                 supprimer.setAccessibleHelp("Bouton");
                 supprimer.setAccessibleText(Integer.toString(data.get(0).getId_pub()));
                         
-                        
-                        
+                 JFXButton likeBtn = new JFXButton();
                 
+                likeBtn.setStyle("-fx-text-fill: hite;-fx-font: 15 'system'; -fx-background-radius: 5px; -padding-left: 50px;-fx-text-color:red;");
+                 likeBtn.setText(Integer.toString(nblike));
+                likeBtn.setGraphic(imageviewlike);
+                likeBtn.setAccessibleText(Integer.toString(data.get(0).getId_pub()));
+                        
+                 
+                   
                       supprimer.setOnAction(new EventHandler<ActionEvent>() {
                                                 @Override
                                                 public void handle(ActionEvent event) {
-                                                a.supprimerPublication(data.get(1));
-                                                   
-                                                      Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                                                a.supprimerPublication(data.get(0));
+                                                  Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Information Dialog");
         alert.setHeaderText(null);
         alert.setContentText("Voulez vous supprimer votre publication ?");
@@ -260,13 +280,17 @@ VBox vv = new VBox();
                                                 }
                                             });
                 
-                      
+                                                        /* Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Information Dialog");
+        alert.setHeaderText(null);
+        alert.setContentText("Voulez vous supprimer votre publication ?");
+        alert.show();*/
                       
                       
                       
                       JFXButton affCom = new JFXButton();
                             
-                              affCom.setText("Voir commentaire ");
+                              affCom.setText("ajouter un commentaire ");
                 affCom.setStyle("-fx-text-fill: hite;-fx-font: 11 'system'; -fx-background-radius: 5px; -padding-left: 50px;-fx-background-color:#c49e56;");
                 affCom.prefWidth(120);
                 
@@ -274,38 +298,7 @@ VBox vv = new VBox();
                       affCom.setOnAction(new EventHandler<ActionEvent>() {
                                                 @Override
                                                 public void handle(ActionEvent event) {
-                                                                      recupid=Integer.valueOf(affCom.getAccessibleText());
-                                                                        System.out.println(recupid+"jjjj");
-      ;
-                                                               try {
-                                    
-                                        Pane newLoadedPaneExp = FXMLLoader.load(getClass().getResource("/FXML/actualite.fxml"));
-                                        pass.getChildren().clear();
-                                        pass.getChildren().add(newLoadedPaneExp);
-                                    } catch (IOException ex) {
-                                        Logger.getLogger(Presentation.ActualiteController.class.getName()).log(Level.SEVERE, null, ex);
-                                    }
-                                                   
-                                                   
-                                                   
-                                                }
-                                            });
-                    JFXButton AddCom = new JFXButton();
-                            
-                              AddCom.setText("Ajouter commentaire ");
-                AddCom.setStyle("-fx-text-fill: hite;-fx-font: 11 'system'; -fx-background-radius: 5px; -padding-left: 50px;-fx-background-color:#c49e56;");
-         //       supprimer.setStyle("-fx-text-fill:#077F6F;-fx-font-weight: bold; -fx-font: 15px Tahoma;-fx-background-color: #C4CDCC;");
-                AddCom.prefWidth(120);
-                
-                   AddCom.setAccessibleText(Integer.valueOf(data.get(k).getId_pub()).toString());
-
-                        
-                        
-                
-                      AddCom.setOnAction(new EventHandler<ActionEvent>() {
-                                                @Override
-                                                public void handle(ActionEvent event) {
-                                                                      recupid=Integer.valueOf(AddCom.getAccessibleText());
+                                                                     recupid=Integer.valueOf(affCom.getAccessibleText());
                                                                         System.out.println(recupid+"jjjj");
       ;
                                                                try {
@@ -321,39 +314,6 @@ VBox vv = new VBox();
                                                    
                                                 }
                                             });
-                       JFXButton jaime = new JFXButton();
-                            
-                              AddCom.setText("J'aime ");
-                jaime.setStyle("-fx-text-fill: hite;-fx-font: 11 'system'; -fx-background-radius: 5px; -padding-left: 50px;-fx-background-color:#c49e56;");
-         //       supprimer.setStyle("-fx-text-fill:#077F6F;-fx-font-weight: bold; -fx-font: 15px Tahoma;-fx-background-color: #C4CDCC;");
-                jaime.prefWidth(120);
-                
-                   jaime.setAccessibleText(Integer.valueOf(data.get(k).getId_pub()).toString());
-
-                        
-                        
-                
-                      jaime.setOnAction(new EventHandler<ActionEvent>() {
-                                                @Override
-                                                public void handle(ActionEvent event) {
-                                                                      recupid=Integer.valueOf(AddCom.getAccessibleText());
-                                                                        System.out.println(recupid+"jjjj");
-      ;
-                                                               try {
-                                    
-                                        Pane newLoadedPaneExp = FXMLLoader.load(getClass().getResource("/FXML/Commentaire.fxml"));
-                                        pass.getChildren().clear();
-                                        pass.getChildren().add(newLoadedPaneExp);
-                                    } catch (IOException ex) {
-                                        Logger.getLogger(Presentation.ActualiteController.class.getName()).log(Level.SEVERE, null, ex);
-                                    }
-                                                   
-                                                   
-                                                   
-                                                }
-                                            });
-                
-                      
                       JFXButton affvideo = new JFXButton();
                             
                               affvideo.setText("Voir video ");
@@ -381,20 +341,33 @@ VBox vv = new VBox();
                                         pass.getChildren().add(newLoadedPaneExp);
                                     } catch (IOException ex) {
                                         Logger.getLogger(Presentation.ActualiteController.class.getName()).log(Level.SEVERE, null, ex);
-                                    }
-                                         
-                                        
-                                      
-                                                   
-                                                   
-                                                   
+                                    }  
                                                 }
+                                            });
+                      
+                 likeBtn.setOnAction(new EventHandler<ActionEvent>() {
+                                                @Override
+                                                public void handle(ActionEvent event) {
+                                           idpub=Integer.valueOf(likeBtn.getAccessibleText());
+                                         // pp=new Publication(); 
+                                         //pp=a.rechercherPublicationsById(recupid);
+                                            PublicationLikeService  pls=new PublicationLikeService();
+                                            PublicationLike pl=new PublicationLike(iduser,idpub);  
+                                            if(!pls.getUserLike(pl))
+                                            {
+                                            pls.ajouterLike(pl);
+                                            
+                                           afficherlist();
+                                                }
+                                            
+                                                }
+                                                
                                             });
                 
                 
                    grid.add(new VBox(root, id, l, p1), j, i);
-                   vv.getChildren().addAll(l,contenupub,datePublicationPub);
-                     v1.getChildren().addAll(l1,contenue,datePublication,supprimer ,affvideo,jaime,AddCom);
+                   vv.getChildren().addAll(l,l1,contenupub,datePublicationPub);
+                     v1.getChildren().addAll(likeBtn,contenue,datePublication,supprimer ,affvideo,affCom);
        grid.add((v1), 1, i);
          grid.add((vv), 2, i);                
 
@@ -478,9 +451,10 @@ VBox vv = new VBox();
        listep=sp.consulterPublication();
        PublicationData.addAll(listep);
            String pub = tfpub.getText();
-        FTTS freeTTSPub = new FTTS(pub);
+       //tts
+           FTTS freeTTSPub = new FTTS(pub);
                 freeTTSPub.speak();
-
+//notif
           TrayNotification tray = new TrayNotification("Notification !", "Publication ajoutée avec succée", NotificationType.SUCCESS);
         tray.showAndDismiss(Duration.seconds(6));
        afficherlist();
@@ -497,8 +471,6 @@ VBox vv = new VBox();
 
     @FXML
     private void supprimer(ActionEvent event) {
-    
-    
 
     }
     private void Modifier(ActionEvent event) {
@@ -506,10 +478,11 @@ VBox vv = new VBox();
     }
 
     private void ajoutCommentaire(ActionEvent event) {
-        
+ 
     }
     private void supcom(ActionEvent event) {
 
+ 
 }
 
     @FXML
