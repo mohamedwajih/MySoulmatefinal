@@ -8,7 +8,7 @@ package Services;
 import DataStorage.Mydb;
 import Entities.Publication;
 import Entities.PublicationLike;
-import Iservices.ipublicationLike;
+//import iServices.ipublicationLike;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,7 +19,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
-public class PublicationLikeService implements ipublicationLike {
+public class PublicationLikeService {
   Connection cnx;
 
     public PublicationLikeService() {
