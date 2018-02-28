@@ -38,6 +38,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -75,6 +77,8 @@ public class EventArchveController implements Initializable ,MapComponentInitial
     @FXML
     private Button retour;
     Event e;
+    @FXML
+    private ImageView image;
 
      public void setId(int id_event) {
        id=id_event;
@@ -86,6 +90,8 @@ public class EventArchveController implements Initializable ,MapComponentInitial
      lie=e.getLieu_Event();
      i=e.getPart();
       text.setText(e.getTexte_Event());
+      Image im = new Image (e.getImage());
+      image.setImage(im);
       
     }
     @Override

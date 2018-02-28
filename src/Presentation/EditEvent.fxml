@@ -24,7 +24,7 @@
       <ChoiceBox fx:id="type" layoutX="115.0" layoutY="136.0" prefWidth="150.0" />
       <Label layoutX="65.0" layoutY="140.0" text="type" />
       <ImageView fx:id="Image" fitHeight="140.0" fitWidth="368.0" layoutX="347.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true" />
-      <Button layoutX="466.0" layoutY="176.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="130.0" text="Modifier Image" />
+      <Button fx:id="modimage" layoutX="135.0" layoutY="176.0" mnemonicParsing="false" onAction="#modim" prefHeight="25.0" prefWidth="130.0" text="Modifier Image" />
       <Pane layoutX="63.0" layoutY="359.0" prefHeight="232.0" prefWidth="483.0">
          <children>
             <GoogleMapView fx:id="mapV" layoutX="-1.0" layoutY="-2.0" prefHeight="232.0" prefWidth="483.0">
@@ -34,5 +34,6 @@
             </GoogleMapView>
          </children>
       </Pane>
+      <Button fx:id="anuul" layoutX="575.0" layoutY="524.0" mnemonicParsing="false" onAction="#annuler" prefHeight="25.0" prefWidth="140.0" text="Annuler" />
    </children>
 </AnchorPane>

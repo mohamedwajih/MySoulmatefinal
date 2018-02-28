@@ -8,18 +8,18 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="610.0" prefWidth="683.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="Presentation.EventPassController">
+<AnchorPane id="AnchorPane" prefHeight="610.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.EventPassController">
      <children>
-      <Label fx:id="Titre" layoutX="26.0" layoutY="37.0" prefHeight="17.0" prefWidth="210.0" text="Titre" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="364.0" AnchorPane.topAnchor="37.0" />
-      <Label fx:id="date" layoutX="26.0" layoutY="78.0" text="Date : " AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="334.0" AnchorPane.topAnchor="78.0" />
-      <Label fx:id="lieu" layoutX="26.0" layoutY="122.0" text="Lieu :" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="334.0" AnchorPane.topAnchor="122.0" />
-      <Text fx:id="text" layoutX="26.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="537.13671875" />
-      <Pane layoutX="63.0" layoutY="261.0" prefHeight="197.0" prefWidth="517.0">
+      <Label fx:id="Titre" layoutX="26.0" layoutY="89.0" prefHeight="17.0" prefWidth="210.0" text="Titre" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="364.0" AnchorPane.topAnchor="89.0" />
+      <Label fx:id="date" layoutX="26.0" layoutY="116.0" text="Date : " AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="334.0" AnchorPane.topAnchor="116.0" />
+      <Label fx:id="lieu" layoutX="26.0" layoutY="140.0" text="Lieu :" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="334.0" AnchorPane.topAnchor="140.0" />
+      <Text fx:id="text" layoutX="26.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="537.13671875" />
+      <Pane layoutX="19.0" layoutY="280.0" prefHeight="197.0" prefWidth="634.0">
          <children>
-            <GoogleMapView fx:id="mapView" layoutX="29.0" layoutY="14.0" prefHeight="197.0" prefWidth="517.0" />
+            <GoogleMapView fx:id="mapView" layoutX="6.0" prefHeight="197.0" prefWidth="634.0" />
          </children>
       </Pane>
-      <ImageView fx:id="image" fitHeight="144.0" fitWidth="269.0" layoutX="309.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" />
-      <ListView fx:id="list" layoutX="91.0" layoutY="488.0" prefHeight="92.0" prefWidth="517.0" />
+      <ImageView fx:id="image" fitHeight="148.0" fitWidth="293.0" layoutX="376.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" />
+      <ListView fx:id="list" layoutX="24.0" layoutY="488.0" prefHeight="92.0" prefWidth="634.0" />
      </children>
 </AnchorPane>

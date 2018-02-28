@@ -8,6 +8,7 @@ package Presentation;
 import Entities.CommentaireEvent;
 import Entities.Event;
 import Entities.Participation;
+import Services.CommentaireEventService;
 import Services.EventService;
 import Services.ParticipationService;
 import com.lynden.gmapsfx.GoogleMapView;
@@ -23,6 +24,8 @@ import com.lynden.gmapsfx.service.geocoding.GeocodingResult;
 import com.lynden.gmapsfx.service.geocoding.GeocodingService;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -58,7 +61,7 @@ public class EventPassController implements Initializable ,MapComponentInitializ
     @FXML
     private ImageView image;
     @FXML
-    private ListView<CommentaireEvent> list;
+    private ListView<String> list;
 
     public void setId(int id_event) {
       id=id_event;
@@ -72,6 +75,18 @@ public class EventPassController implements Initializable ,MapComponentInitializ
        Image im= new Image(e.getImage());
       image.setImage(im);
       text.setText(e.getTexte_Event());  
+       CommentaireEventService cs= new CommentaireEventService();
+         ArrayList<CommentaireEvent> lC=cs.getCommentaire(es.getEvent(id));
+            Collections.sort(lC, new Comparator<CommentaireEvent>() {
+    @Override
+    public int compare(CommentaireEvent o1, CommentaireEvent o2) {
+        return o1.getDate().compareTo(
+                o2.getDate());
+    }
+});
+        for(CommentaireEvent c :lC){
+        list.getItems().add(c.getText());
+        }
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {

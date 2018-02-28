@@ -7,7 +7,7 @@ package Services;
 
 import DataStorage.Mydb;
 import Entities.Event;
-import Iservices.IEvent;
+import IServices.IEvent;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -146,7 +146,7 @@ public class EventService  implements IEvent{
     public ArrayList<Event> getListEventsUser(int id_user_ev) {
           ArrayList<Event> listE = new ArrayList<Event>();
   try {
-            String query = "SELECT * FROM event WHERE date_event > CURDATE() and id_user_event="+id_user_ev;
+            String query = "SELECT * FROM event WHERE date_event >=CURDATE() and id_user_event="+id_user_ev;
             Statement stm= connexion.createStatement();
             ResultSet rs = stm.executeQuery(query);
              while(rs.next())
@@ -417,6 +417,4 @@ public class EventService  implements IEvent{
         }
 
     }
-
-
 }

@@ -53,7 +53,13 @@ public class ConsulteListEventRespnsableController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         Image im= new Image("css/l.png");
         logo.setImage(im);
+         
         EventService es = new EventService();  
+        ArrayList<Event> lA= es.getArchive(1);
+        if(lA.size()==0){
+         archive.setDisable(true);
+        
+        }
          ArrayList<Event> listE=es.getListEventsUser(1);
          Collections.sort(listE, new Comparator<Event>() {
     @Override
@@ -153,9 +159,8 @@ public class ConsulteListEventRespnsableController implements Initializable {
             
             ArchveController mainController = loader.<ArchveController>getController();
             mainController.setId(1);
-             Stage stage = (Stage) archive.getScene().getWindow();
-             stage.close();
-            
+            Stage stage = (Stage) archive.getScene().getWindow();
+            stage.close();
             st.show();
         } catch (IOException ex) {
             Logger.getLogger(ConsulteListEventRespnsableController.class.getName()).log(Level.SEVERE, null, ex);
@@ -173,9 +178,12 @@ public class ConsulteListEventRespnsableController implements Initializable {
             Scene scene1 = new Scene(root1);
             scene1.getStylesheets().add("css/stylesheet1.css");
             st.setScene(scene1);
+            Stage stage = (Stage) pass.getScene().getWindow();
+            stage.close();
             
             st.show();
-        } catch (IOException ex) {
+        } 
+          catch (IOException ex) {
             Logger.getLogger(ConsulterEvennementController.class.getName()).log(Level.SEVERE, null, ex);
         }
            

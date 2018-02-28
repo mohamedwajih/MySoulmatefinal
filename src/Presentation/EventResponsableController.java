@@ -5,7 +5,9 @@
  */
 package Presentation;
 
+import Entities.CommentaireEvent;
 import Entities.Event;
+import Services.CommentaireEventService;
 import Services.EventService;
 import Services.NotificationServices;
 import com.lynden.gmapsfx.GoogleMapView;
@@ -21,6 +23,7 @@ import com.lynden.gmapsfx.service.geocoding.GeocodingResult;
 import com.lynden.gmapsfx.service.geocoding.GeocodingService;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -35,6 +38,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
@@ -73,59 +77,70 @@ int id;
     private GoogleMapView mapView;
     @FXML
     private ImageView image;
+    @FXML
+    private ListView<String> listC;
+    @FXML
+    private Button retour;
     public void setId(int id_event) {
        id=id_event;
       es= new EventService();  
       e=es.getEvent(id);
       titre.setText(e.getTitre_Event());
-      date.setText(date.getText()+e.getDate_Event());
-      lieu.setText(lieu.getText()+e.getLieu_Event());
+      date.setText(e.getDate_Event().toString());
+      lieu.setText(e.getLieu_Event());
       text.setText(e.getTexte_Event());
       Image im= new Image(e.getImage());
       image.setImage(im);
-      
+     
        lie=e.getLieu_Event();
-     i=e.getPart();
+       i=e.getPart();
        if(e.getPart()!=0){
        edit.setDisable(true);
        delete.setDisable(true);
        }
+        CommentaireEventService cs= new CommentaireEventService();
+        ArrayList<CommentaireEvent> l= cs.getCommentaire(e);
+        for(CommentaireEvent c :l){
+        listC.getItems().add(c.getText());
+        }
       
     }
    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-          mapView.addMapInializedListener(this);
+        mapView.addMapInializedListener(this);
         address.bind(lieu.textProperty());
+        
       
     }    
 
+   
     @FXML
-    private void editEvent(ActionEvent event) {
-    try {
+    private void editE(ActionEvent event) {
+           try {
+              
         
-        NotificationServices ns= new NotificationServices();
-        ns.deleteNotif(id);
-        Stage st = new Stage();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("EditEvent.fxml"));
-        Parent root1 = (Parent) loader.load();
-        st.setTitle("My Event");
-        Scene scene1 = new Scene(root1);
-        scene1.getStylesheets().add("css/stylesheet1.css");
-        st.setScene(scene1);
-
-        EditEventController mainController = loader.<EditEventController>getController();
-        mainController.setIdE(id);
-        st.show();
-         Stage stage = (Stage) edit.getScene().getWindow();
-         stage.close();
-        
+            
+          Stage st = new Stage();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("EditEvent.fxml"));
+            Parent root1 = (Parent) loader.load();
+            st.setTitle("Event");
+            Scene scene1 = new Scene(root1);
+            scene1.getStylesheets().add("css/stylesheet1.css");
+            st.setScene(scene1);
+             NotificationServices ns = new NotificationServices();
+               ns.deleteNotif(id);
+            EditEventController mainController = loader.<EditEventController>getController();
+            mainController.setIdE(id);
+            Stage stage = (Stage) edit.getScene().getWindow();
+            stage.close();
+            st.show();
+      
     } catch (IOException ex) {
         Logger.getLogger(EventResponsableController.class.getName()).log(Level.SEVERE, null, ex);
     }
     }
-
     @FXML
     private void deleteEvent(ActionEvent event) {
     try {
@@ -199,5 +214,25 @@ int id;
         });   
     
     }
+
+    @FXML
+    private void retuenAction(ActionEvent event) {
+         try {
+            Stage stage = (Stage)retour.getScene().getWindow();
+            stage.close();
+            
+            Parent root = FXMLLoader.load(getClass().getResource("ConsulteListEventRespnsable.fxml"));
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add("css/stylesheet1.css");
+            Stage   primaryStage = new Stage();
+            primaryStage.setTitle("Event");
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(EventArchveController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    
     
 }

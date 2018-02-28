@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Iservices;
+package IServices;
 
 import Entities.Event;
 import java.util.ArrayList;
@@ -33,8 +33,7 @@ public interface IEvent {
     public ArrayList<Event> getListEventsUserPassé(int id_user_ev);
     public List<Event> rechercher(String event) ;
      public void modifierImage(String image,int id);
-   
-
     
 
+    
 }
