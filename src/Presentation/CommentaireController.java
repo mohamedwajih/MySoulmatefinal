@@ -214,7 +214,7 @@ VBox vv = new VBox();
                       supprimer.setOnAction(new EventHandler<ActionEvent>() {
                                                 @Override
                                                 public void handle(ActionEvent event) {
-                                                a.supprimerCommentaire(data.get(1));
+                                                a.supprimerCommentaire(data.get(0));
                                                    
                                                       Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Information Dialog");
