@@ -52,6 +52,7 @@ public class ConsulteListEventRespnsableController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
       
+         
         EventService es = new EventService();  
         ArrayList<Event> lA= es.getArchive(1);
         if(lA.size()==0){
@@ -127,7 +128,7 @@ public class ConsulteListEventRespnsableController implements Initializable {
         Parent root1 = (Parent) loader.load();
         st.setTitle("My Event");
         Scene scene1 = new Scene(root1);
-        
+        scene1.getStylesheets().add("css/stylesheet1.css");
         st.setScene(scene1);
 
         EventResponsableController mainController = loader.<EventResponsableController>getController();
